@@ -123,7 +123,7 @@
 <div class="nav-container">
 
 <div class="nav-toggle">
-<button type="button" class="nav-option-btn nav-btn"><i class="fa fa-bars fa-lg"></i></button>
+<button type="button" class="nav-option-btn nav-btn"><i class="fa fa-bars"></i></button>
 </div>
 
 <?php if ($categories) { ?>

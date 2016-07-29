@@ -871,7 +871,7 @@ padding-right:15px;
 .nav-toggle {
 display:none;
 height:60px;
-vertical-align:top;
+vertical-align:middle;
 }
 
 .nav-toggle button {
@@ -881,6 +881,7 @@ padding-left:15px;
 padding-right:15px;
 border:0;
 background:none;
+font-size:18px;
 color:#fff;
 transition: all .25s;
 -webkit-transition: all .25s;
@@ -898,6 +899,7 @@ display:inline-block;
 height:60px;
 padding-left:5%;
 line-height:60px;
+vertical-align:middle;
 }
 
 .nav-logo a {
