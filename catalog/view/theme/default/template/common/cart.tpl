@@ -17,7 +17,7 @@
 
 <div class="cart-menu-top">
 
-<h1 class="cart-menu-header"><?php echo $text_cart_title; ?></h1>
+<h2 class="cart-menu-header"><?php echo $text_cart_title; ?></h2>
 
 <table class="table">
 
@@ -35,20 +35,16 @@
 
 <td class="cart-details text-left">
 
-<b><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a></b>
+<a href="<?php echo $product['href']; ?>" class="product-title"><?php echo $product['name']; ?></a>
 
 <?php if ($product['option']) { ?>
 <?php foreach ($product['option'] as $option) { ?>
-<br />
-<?php //echo $option['name']; ?> <?php echo $option['value']; ?>
+<p class="product-option"><?php //echo $option['name']; ?><?php echo $option['value']; ?></p>
 <?php } ?>
 <?php } ?>
-<br>
-<?php echo $product['total']; ?>
-<br>
-<?php echo $product['quantity']; ?>
-<br>
-<button type="button" onclick="cart.remove('<?php echo $product['cart_id']; ?>');" title="<?php echo $button_remove; ?>" class="btn btn-danger btn-xs"><i class="fa fa-times"></i></button>
+<p class="product-total"><?php echo $product['total']; ?></p>
+<p class="product-quantity"><?php echo $product['quantity']; ?></p>
+<p class="cart-btn"><button type="button" onclick="cart.remove('<?php echo $product['cart_id']; ?>');" title="<?php echo $button_remove; ?>" class="btn btn-danger btn-xs"><i class="fa fa-times"></i></button></p>
 </td>
 
 <!--<td id="qty" class="text-right">
@@ -96,7 +92,7 @@
 
 <?php } else { ?>
 <li>
-<h1 class="cart-menu-header"><?php echo $text_cart_title; ?></h1>
+<h2 class="cart-menu-header"><?php echo $text_cart_title; ?></h2>
 <p class="text-center cart-empty"><?php echo $text_empty; ?></p>
 </li>
 <?php } ?>
