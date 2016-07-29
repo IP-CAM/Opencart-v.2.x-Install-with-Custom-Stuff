@@ -66,10 +66,11 @@ content:none;
 }
 
 .slick-prev, .slick-next {
+color:#231F20;
 z-index:2;
 }
 
-.slick-prev {
+.slick-prev, .slick-prev:active, .slick-prev:focus {
 width:10px;
 height:20px;
 margin-top:-15px;
@@ -78,7 +79,7 @@ border-bottom: 10px solid transparent;
 border-right:10px solid #231F20;
 }
 
-.slick-next {
+.slick-next, .slick-next:active, .slick-next:focus {
 width:10px;
 height:20px;
 margin-top:-15px;

@@ -897,6 +897,7 @@ transition: all .25s;
 display:inline-block;
 height:60px;
 padding-left:5%;
+line-height:60px;
 }
 
 .nav-logo a {
@@ -914,6 +915,7 @@ height:60px;
 
 .nav-main .nav-menu {
 display:inline-block;
+vertical-align:middle;
 }
 
 .nav-main .nav-menu {
@@ -923,9 +925,11 @@ padding-right:15px;
 }
 
 .nav-main .nav-menu li {
+display: inline-block;
+height: 60px;
 line-height:60px;
-padding-left:15px;
-padding-right:15px;
+padding-left:5px;
+padding-right:5px;
 }
 
 .nav-main .nav-menu a {
@@ -936,6 +940,7 @@ padding-right:15px;
 border-bottom:solid 5px transparent;
 font-family: 'Gotham-Book';
 font-size:18px;
+vertical-align:middle;
 transition: all .25s;
 -webkit-transition: all .25s;
 }
@@ -951,10 +956,11 @@ display:inline-block;
 height:60px;
 padding-left:15px;
 padding-right:15px;
+vertical-align:middle;
 }
 
 .nav-options li {
-line-height:60px;
+display:inline-block;
 }
 
 .nav-options button {
@@ -965,6 +971,7 @@ padding-right:15px;
 border:0;
 background:none;
 color:#fff;
+vertical-align:middle;
 transition: all .25s;
 -webkit-transition: all .25s;
 }
@@ -1068,6 +1075,10 @@ text-decoration:none;
 
 #cart {
 margin-bottom:0;
+}
+
+#cart li {
+display:inline;
 }
 
 .cart-menu {
@@ -1718,6 +1729,7 @@ padding-right:0;
 
 .nav-container .nav-logo a {
 font-size: 12px;
+vertical-align:middle;
 }
 
 .nav-toggle {
