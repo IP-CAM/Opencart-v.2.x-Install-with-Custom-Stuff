@@ -13,25 +13,6 @@ width:100%;
 height:100%;
 }
 
-.slide-overlay {
-position:absolute;
-top:0;
-bottom:30px;
-background:#000;
-opacity:.25;
-z-index:2;
-}
-
-.overlay-left {
-left:0;
-width:33.333%;
-}
-
-.overlay-right {
-right:0;
-width:33.333%;
-}
-
 .slick-slide {
 position:relative;
 margin-bottom:40px;
@@ -89,21 +70,21 @@ z-index:2;
 }
 
 .slick-prev {
-width: 0;
-height: 0;
+width:10px;
+height:20px;
 margin-top:-15px;
 border-top: 10px solid transparent;
 border-bottom: 10px solid transparent; 
-border-right:10px solid #000; 
+border-right:10px solid #231F20;
 }
 
 .slick-next {
-width: 0;
-height: 0;
+width:10px;
+height:20px;
 margin-top:-15px;
 border-top: 10px solid transparent;
 border-bottom: 10px solid transparent;
-border-left: 10px solid #000;
+border-left: 10px solid #231F20;
 }
 
 @media (max-width:991px) {
@@ -123,10 +104,6 @@ padding-right:0;
 .slide-container > .col-sm-12 {
 padding-left:0;
 padding-right:0;
-}
-
-.slide-overlay {
-display:none;
 }
 
 .slideshow .slick-slide .slide-inner {
@@ -172,8 +149,6 @@ padding-right:0;
 
 <div class="container-fluid slide-container">
 <div class="col-sm-12">
-<!--<div class="slide-inner">-->
-<!--<div class="slide-overlay overlay-left"></div>-->
 <div id="slideshow<?php echo $module; ?>" class="slideshow" style="opacity: 1;">
 <?php foreach ($banners as $banner) { ?>
 <div class="slide">
@@ -191,8 +166,6 @@ padding-right:0;
 </div>
 <?php } ?>
 </div>
-<!--<div class="slide-overlay overlay-right"></div>-->
-<!--</div>-->
 </div>
 </div>
 
@@ -200,6 +173,8 @@ padding-right:0;
 $(document).ready(function(){
 $('.slideshow').slick({
 infinite: true,
+arrows: true,
+prevArrow: '<button type="button" class="slick-prev">Previous</button>',
 centerMode: true,
 centerPadding: '0',
 slidesToShow: 3,
