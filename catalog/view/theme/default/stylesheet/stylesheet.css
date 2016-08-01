@@ -1203,6 +1203,9 @@ padding-bottom:30px;
 
 .cart-menu-top::-webkit-scrollbar-track {
 border-radius:0;
+-webkit-border-radius:0:
+-moz-border-radius:0:
+-ms-border-radius:0:
 background-color:#fff;
 }
 
@@ -1212,6 +1215,9 @@ width:5px;
 
 .cart-menu-top::-webkit-scrollbar-thumb {
 border-radius:0;
+-webkit-border-radius:0:
+-moz-border-radius:0:
+-ms-border-radius:0:
 background-color:#000;
 }
 
@@ -1390,6 +1396,9 @@ height: 60px;
 padding: 0;
 border: solid 2px #231F20;
 border-radius:0;
+-webkit-border-radius:0:
+-moz-border-radius:0:
+-ms-border-radius:0:
 line-height:60px;
 font-family: 'Gotham-Book';
 font-size: 18px;
@@ -1552,6 +1561,9 @@ height:60px;
 padding: 0 15px 0 36%;
 border: solid 2px #58595B;
 border-radius:0;
+-webkit-border-radius:0:
+-moz-border-radius:0:
+-ms-border-radius:0:
 background-color:#fff;
 font-family:'Gotham-Book';
 font-size:18px;
@@ -1595,6 +1607,9 @@ display:none;
 padding:5px;
 border:solid 1px transparent;
 border-radius:0;
+-webkit-border-radius:0:
+-moz-border-radius:0:
+-ms-border-radius:0:
 }
 
 .product-options .image-option .form-group > .text-danger {
@@ -1641,6 +1656,9 @@ padding-left:5px;
 padding-right:5px;
 border: solid 2px #58595B;
 border-radius:0;
+-webkit-border-radius:0:
+-moz-border-radius:0:
+-ms-border-radius:0:
 vertical-align: middle;
 font-family:'Gotham-Book';
 font-size:18px;
@@ -1654,6 +1672,9 @@ height:60px;
 padding:0;
 border:0;
 border-radius:0;
+-webkit-border-radius:0:
+-moz-border-radius:0:
+-ms-border-radius:0:
 font-family:'Gotham-Book';
 background:#231F20;
 font-size:18px;
@@ -1680,6 +1701,9 @@ text-align:center;
 .contact-page .contact-content textarea {
 border: solid 2px #58595B;
 border-radius:0;
+-webkit-border-radius:0:
+-moz-border-radius:0:
+-ms-border-radius:0:
 font-family:'Gotham-Book';
 font-size:18px;
 }
@@ -1737,6 +1761,9 @@ height: 60px;
 padding: 0;
 border: solid 2px #231F20;
 border-radius:0;
+-webkit-border-radius:0:
+-moz-border-radius:0:
+-ms-border-radius:0:
 line-height:60px;
 font-family: 'Gotham-Book';
 font-size: 18px;
