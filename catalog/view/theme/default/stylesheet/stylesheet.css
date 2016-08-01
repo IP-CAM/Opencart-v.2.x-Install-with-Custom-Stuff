@@ -1264,6 +1264,10 @@ opacity:0;
 
 .breadcrumb{display:none!important;}
 
+#content {
+margin-bottom:50px;
+}
+
 .featured-section h1 {
 margin:0 0 75px;
 text-align:center;
@@ -1775,10 +1779,11 @@ vertical-align: middle;
 
 /* FOOTER */
 footer {
-margin-top:50px;
+margin-top:0px;
 padding-top:60px;
 padding-left:45px;
 padding-right:45px;
+border-top:none;
 background-color:#F1F2F2;
 }
 

@@ -84,21 +84,9 @@ $("body > .overlay").animate({
 $(".nav-option-btn").click(function(){
 	if ($(this).hasClass("btn-active")) {
 		$(this).removeClass("btn-active");
-		/*$(this).css({
-			"background": "#231F20",
-			"color": "#fff"
-		});*/
 	} else {
 		$(".nav-option-btn").removeClass("btn-active");
-		/*$(".nav-option-btn").css({
-			"background": "#231F20",
-			"color": "#fff"
-		});*/
 		$(this).addClass("btn-active");
-		/*$(this).css({
-			"background": "#fff",
-			"color": "#231F20"
-		});*/
 	}
 	if ($(this).parent().next("nav .nav-option-menu").is(":visible")) {
 		if ($(this).parent().next("nav .nav-option-menu").is(".search-menu")) {
@@ -134,10 +122,6 @@ $(".nav-option-btn").click(function(){
 // overlay click event
 $("body > .overlay").click(function(){
 	$(".nav-option-btn").removeClass("btn-active");
-	/*$(".nav-option-btn").css({
-			"background": "#231F20",
-			"color": "#fff"
-	});*/
 	if ($("nav .nav-option-menu.search-menu").is(":visible")) {
 		$("nav .nav-option-menu.search-menu").slideUp();
 		overlayOff();
@@ -146,23 +130,6 @@ $("body > .overlay").click(function(){
 		overlayOff();
 	}
 });
-
-// nav buttons hover event
-/*
-$(".nav-option-btn")
-.on("mouseenter", function() {
-$(this).css({
-"background": "#fff",
-"color": "#231F20"
-});
-})
-.on("mouseleave", function() {
-$(this).css({
-"background": "#231F20",
-"color": "#fff"
-});
-});
-*/
 
 // add/remove overlay on resize (if nec)
 $(window).resize(function(){
@@ -206,11 +173,12 @@ $(".product-options .image-option .radio").not(this).each(function(){
 });
 
 // floating banner
+$(document).ready(function(){
 function checkOffset() {
 	if ($('.banner-float').offset().top + $('.banner-float').height() >= $('footer').offset().top) {
 		$('.banner-float').css({
 			'position': 'relative',
-			'bottom': '-51px'
+			'bottom': '0px'
 		});
 	}
 	if ($(document).scrollTop() + window.innerHeight < $('footer').offset().top) {
@@ -220,8 +188,9 @@ function checkOffset() {
 		}); // restore when you scroll up
 	}
 }
-$(window).on('load, resize, scroll', function() {
-	checkOffset();
+$(document).scroll(function(){
+checkOffset();
+});
 });
 
 </script>
