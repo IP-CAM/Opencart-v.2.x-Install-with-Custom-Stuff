@@ -833,6 +833,17 @@ border:none;
 outline:none;
 }
 
+a, button, .btn {
+box-shadow:none;
+text-shadow:none;
+}
+
+input[type="text"], textarea {
+color:#666;
+box-shadow:none;
+text-shadow:none;
+}
+
 .text-danger {
 font-family:'Gotham-Book';
 font-size:12px;
