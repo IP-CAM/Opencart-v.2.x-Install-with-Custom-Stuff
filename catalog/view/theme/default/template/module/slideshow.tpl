@@ -92,6 +92,12 @@ border-left: 10px solid #231F20;
 .slideshow .slick-slide .slide-inner {
 background:transparent;
 }
+
+.slick-slide .banner-title {
+opacity:1;
+transition:all .5s;
+-webkit-transition:all .5s;
+}
 }
 
 
@@ -109,12 +115,6 @@ padding-right:0;
 
 .slideshow .slick-slide .slide-inner {
 background:transparent;
-}
-
-.slick-slide .banner-title {
-opacity:1;
-transition:all .5s;
--webkit-transition:all .5s;
 }
 
 .banner-title {

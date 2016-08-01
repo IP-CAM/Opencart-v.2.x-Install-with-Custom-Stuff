@@ -49,6 +49,8 @@
 </head>
 <body class="<?php echo $class; ?>">
 
+<div class="loader"></div>
+
 <header id="header-main" class="header-main">
 
 <!-- MAIN NAV -->

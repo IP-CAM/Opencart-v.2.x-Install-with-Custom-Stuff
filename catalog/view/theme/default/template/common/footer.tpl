@@ -62,6 +62,10 @@
 
 <script>
 
+$(window).load(function() {
+	$(".loader").fadeOut("slow");
+});
+
 function overlayOn(){
 $("body > .overlay").show();
 $("body > .overlay").animate({
