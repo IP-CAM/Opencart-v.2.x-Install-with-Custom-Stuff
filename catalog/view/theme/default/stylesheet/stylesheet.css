@@ -893,6 +893,13 @@ height:60px;
 vertical-align:middle;
 }
 
+.nav-toggle button:hover {
+background:#fff;
+color:#000;
+transition: all .25s;
+-webkit-transition: all .25s;
+}
+
 .nav-toggle button {
 height:60px;
 margin:0;
@@ -902,13 +909,6 @@ border:0;
 background:none;
 font-size:18px;
 color:#fff;
-transition: all .25s;
--webkit-transition: all .25s;
-}
-
-.nav-toggle button:hover {
-background:#fff;
-color:#000;
 transition: all .25s;
 -webkit-transition: all .25s;
 }
@@ -927,6 +927,7 @@ line-height:60px;
 font-size:24px;
 font-weight:normal;
 text-transform:uppercase;
+vertical-align:middle;
 }
 
 .nav-content {
@@ -1694,6 +1695,46 @@ text-transform:uppercase;
 vertical-align:middle;
 }
 
+/* CART PAGE */
+
+.cart-page #content h1 {
+margin: 60px 0;
+text-align: center;
+}
+
+/* ERROR PAGE */
+
+.error-page #content h1 {
+margin: 60px 0;
+text-align: center;
+}
+
+.error-page #content p {
+margin-bottom:10px;
+font-family:'Gotham-Book';
+font-size:18px;
+color:#58595B;
+}
+
+.error-page .buttons {
+margin: 15px auto;
+}
+
+.error-page .buttons a {
+width: 150px;
+height: 60px;
+padding: 0;
+border: solid 2px #231F20;
+border-radius:0;
+line-height:60px;
+font-family: 'Gotham-Book';
+font-size: 18px;
+background: #231F20;
+color: #fff;
+text-transform:uppercase;
+vertical-align: middle;
+}
+
 /* FOOTER */
 footer {
 margin-top:50px;
@@ -1783,11 +1824,6 @@ display:block;
 .nav-container {
 padding-left:0;
 padding-right:0;
-}
-
-.nav-container .nav-logo a {
-font-size: 12px;
-vertical-align:middle;
 }
 
 .nav-toggle {
@@ -1889,6 +1925,10 @@ padding-right:0;
 
 /* MAX-WIDTH: 767px */
 @media (max-width:767px){
+
+.nav-container .nav-logo a {
+font-size:12px;
+}
 
 .cart-menu {
 width:100%;

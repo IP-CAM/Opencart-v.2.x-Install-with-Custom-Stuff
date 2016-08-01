@@ -98,6 +98,12 @@ opacity:1;
 transition:all .5s;
 -webkit-transition:all .5s;
 }
+
+.banner-title {
+height:60px;
+line-height:60px;
+font-size:24px;
+}
 }
 
 
@@ -115,12 +121,6 @@ padding-right:0;
 
 .slideshow .slick-slide .slide-inner {
 background:transparent;
-}
-
-.banner-title {
-height:60px;
-line-height:60px;
-font-size:24px;
 }
 
 .slick-prev {
