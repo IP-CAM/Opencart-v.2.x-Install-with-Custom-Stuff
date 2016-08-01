@@ -895,7 +895,7 @@ vertical-align:middle;
 
 .nav-toggle button:hover {
 background:#fff;
-color:#000;
+color:#231F20;
 transition: all .25s;
 -webkit-transition: all .25s;
 }
@@ -1007,7 +1007,7 @@ transition: all .25s;
 
 button.btn-active {
 background:#fff;
-color:#000;
+color:#231F20;
 transition: all .25s;
 -webkit-transition: all .25s;
 }

@@ -83,7 +83,7 @@ $("body > .overlay").animate({
 // navigation menus toggle
 $(".nav-option-btn").click(function(){
 	if ($(this).hasClass("btn-active")) {
-		$(this).removeClass("btn-active")
+		$(this).removeClass("btn-active");
 	} else {
 		$(".nav-option-btn").removeClass("btn-active");
 		$(this).addClass("btn-active");
