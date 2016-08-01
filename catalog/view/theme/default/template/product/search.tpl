@@ -23,6 +23,7 @@
 
 <h1><?php echo $heading_title; ?></h1>
 
+<!--
 <label class="control-label" for="input-search"><?php echo $entry_search; ?></label>
 
 <div class="row">
@@ -58,7 +59,7 @@
 </select>
 </div>
 
-<!--<div class="col-sm-3">
+<div class="col-sm-3">
 <label class="checkbox-inline">
 <?php if ($sub_category) { ?>
 <input type="checkbox" name="sub_category" value="1" checked="checked" />
@@ -66,7 +67,7 @@
 <input type="checkbox" name="sub_category" value="1" />
 <?php } ?>
 <?php echo $text_sub_category; ?></label>
-</div>-->
+</div>
 
 </div>
 
@@ -121,6 +122,7 @@
 </div>
 
 <br />
+-->
 
 <div class="row">
 
