@@ -23,9 +23,9 @@
 
 <h1><?php echo $heading_title; ?></h1>
 
-<!--
-<label class="control-label" for="input-search"><?php echo $entry_search; ?></label>
+<!--<label class="control-label" for="input-search"><?php echo $entry_search; ?></label>-->
 
+<!--
 <div class="row">
 
 <div class="col-sm-4">
@@ -70,7 +70,9 @@
 </div>
 
 </div>
+-->
 
+<!--
 <p>
 <label class="checkbox-inline">
 <?php if ($description) { ?>
@@ -80,11 +82,13 @@
 <?php } ?>
 <?php echo $entry_description; ?></label>
 </p>
+-->
 
-<input type="button" value="<?php echo $button_search; ?>" id="button-search" class="btn btn-primary" />
+<!--<input type="button" value="<?php echo $button_search; ?>" id="button-search" class="btn btn-primary" />-->
 
 <?php if ($products) { ?>
 
+<!--
 <div class="row">
 
 <div class="col-sm-1">
@@ -120,8 +124,6 @@
 </div>
 
 </div>
-
-<br />
 -->
 
 <div class="row">
@@ -160,7 +162,9 @@
 </div>
 
 <?php } else { ?>
-<p><?php echo $text_empty; ?></p>
+<div class="error-content">
+<p class="text-center"><?php echo $text_empty; ?></p>
+</div>
 <?php } ?>
 
 <?php echo $content_bottom; ?></div>

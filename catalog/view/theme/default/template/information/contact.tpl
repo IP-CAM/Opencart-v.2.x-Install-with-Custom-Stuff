@@ -1,13 +1,9 @@
 <?php echo $header; ?>
 <div class="container contact-page">
-<ul class="breadcrumb">
-<?php foreach ($breadcrumbs as $breadcrumb) { ?>
-<li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
-<?php } ?>
-</ul>
+
 <div class="row">
 
-<div id="content" class="col-sm-8 col-sm-offset-2 contact-content">
+<div id="content" class="contact-content col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
 
 <?php echo $content_top; ?>
 
@@ -51,10 +47,8 @@
 
 </fieldset>
 
-<div class="buttons">
-<div class="">
-<input class="submit-btn" type="submit" value="<?php echo $button_submit; ?>" />
-</div>
+<div>
+<input class="button btn-main" type="submit" value="<?php echo $button_submit; ?>" />
 </div>
 
 </form>

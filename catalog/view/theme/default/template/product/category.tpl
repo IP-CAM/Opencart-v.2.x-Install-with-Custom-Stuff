@@ -72,10 +72,10 @@
 <?php } ?>
 
 <?php if (!$categories && !$products) { ?>
-<div class="category-empty">
+<div class="error-content category-empty">
 <p class="text-center"><?php echo $text_empty; ?></p>
-<div class="buttons">
-<div class="text-center"><a href="<?php echo $continue; ?>" class="btn btn-primary"><?php echo $button_continue; ?></a></div>
+<div class="buttons text-center">
+<a href="<?php echo $continue; ?>" class="button btn-main"><?php echo $button_continue; ?></a>
 </div>
 </div>
 <?php } ?>
