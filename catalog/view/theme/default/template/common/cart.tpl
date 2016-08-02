@@ -92,7 +92,7 @@
 
 <?php } else { ?>
 <li>
-<h2 class="cart-menu-header"><?php echo $text_cart_title; ?></h2>
+<h1 class="cart-menu-header"><?php echo $text_cart_title; ?></h1>
 <p class="text-center cart-empty"><?php echo $text_empty; ?></p>
 </li>
 <?php } ?>

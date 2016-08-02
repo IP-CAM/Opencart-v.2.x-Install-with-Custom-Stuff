@@ -1144,6 +1144,12 @@ text-align:center;
 text-transform:uppercase;
 }
 
+.cart-empty {
+font-family:'Gotham-Book';
+font-size:18px;
+color:#595959;
+}
+
 .cart-menu-top {
 position:absolute;
 top:0;
