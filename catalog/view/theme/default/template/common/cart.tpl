@@ -17,7 +17,7 @@
 
 <div class="cart-menu-top">
 
-<h2 class="cart-menu-header"><?php echo $text_cart_title; ?></h2>
+<h1 class="cart-menu-header"><?php echo $text_cart_title; ?></h1>
 
 <table class="table">
 
@@ -81,10 +81,10 @@
 
 <div class="cart-total">
 <?php foreach ($totals as $total) { ?>
-<p class="text-center"><strong><?php echo $total['title']; ?> : <?php echo $total['text']; ?></strong></p>
+<p class="text-center"><?php echo $total['title']; ?> : <?php echo $total['text']; ?></p>
 <?php } ?>
 </div>
-<a href="<?php echo $checkout; ?>" class="cart-checkout-btn"><?php echo $text_checkout; ?></a>
+<a href="<?php echo $checkout; ?>" class="button btn-full"><?php echo $text_checkout; ?></a>
 
 </div>
 
