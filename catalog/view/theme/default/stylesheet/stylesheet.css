@@ -1136,6 +1136,10 @@ font-size:18px;
 color:#595959;
 }
 
+.table {
+table-layout:fixed;
+}
+
 .cart-menu-top {
 position:absolute;
 top:0;
