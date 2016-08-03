@@ -816,7 +816,19 @@ background:#fff;
 z-index:100;
 }
 
+input, button, select, textarea {
+border-radius:0;
+-webkit-border-radius:0;
+-moz-border-radius:0;
+-ms-border-radius:0;
+}
 
+input:focus, button:focus, select:focus, textarea:focus, .form-control:focus {
+box-shadow:none;
+-webkit-box-shadow:none;
+-moz-box-shadow:none;
+-ms-box-shadow:none;
+}
 
 select:active, select:focus {
 border:none;
@@ -1789,7 +1801,20 @@ vertical-align:middle;
 }
 
 .panel-default>.panel-heading+.panel-collapse>.panel-body {
+padding: 30px 15px;
 border-top:none;
+}
+
+.panel-body #account legend, .panel-body #address legend {
+display:none;
+}
+
+.checkout-content label.control-label {
+display:none;
+}
+
+.checkout-content .panel-body .buttons {
+margin-bottom:0;
 }
 
 .checkout-content input.form-control {
@@ -1863,6 +1888,15 @@ display: block;
 margin-top: 15px;
 margin-bottom: 15px;
 text-align:center;
+}
+
+.checkout-content .new-customer {
+margin-bottom:30px;
+}
+
+.checkout-content .new-customer h2,
+.checkout-content .returning-customer h2 {
+margin-top:0;
 }
 
 /*.checkout-checkout footer {
@@ -2023,7 +2057,9 @@ color:#fff;
 
 a.button:focus, a.button:active,
 button.button:focus, button.button:active,
-.button:focus, .button:active {
+.button:focus, .button:active,
+.checkout-content .btn.btn-primary:active,
+.checkout-content .btn.btn-primary:focus  {
 background:#231F20;
 color:#fff;
 text-decoration:none;
