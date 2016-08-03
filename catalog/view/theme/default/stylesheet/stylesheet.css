@@ -1654,11 +1654,29 @@ text-transform:uppercase;
 }
 
 .product-share {
+margin-top:40px;
 text-align:center;
 }
 
 .product-share a {
+display:inline-block;
+margin-bottom:20px;
 padding:0 15px;
+}
+
+.product-share a:hover {
+color:#58595B;
+}
+
+.product-share img {
+width:36px;
+}
+
+.product-share span {
+margin-left: 10px;
+font-family: 'Gotham-Book';
+font-size: 18px;
+vertical-align: middle;
 }
 
 /* SEARCH RESULTS PAGE */
@@ -2276,6 +2294,14 @@ font-size:28px;
 
 .product-info {
 padding:0;
+}
+
+.product-share a {
+padding:0 10px;
+}
+
+.product-share span {
+font-size:12px;
 }
 
 }
