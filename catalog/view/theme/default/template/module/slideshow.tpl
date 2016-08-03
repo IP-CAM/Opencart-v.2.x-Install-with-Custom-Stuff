@@ -8,7 +8,6 @@ padding-right:35px;
 .slick-slide {
 position:relative;
 margin-bottom:40px;
--webkit-backface-visibility: hidden;
 }
 
 .slide-inner {
@@ -53,6 +52,7 @@ transform:translateY(50%);
 -webkit-transform:translateY(50%);
 transition: opacity .5s;
 -webkit-transition: opacity .5s;
+-webkit-backface-visibility: hidden;
 }
 
 .slideshow .slick-slide:hover .banner-title {
