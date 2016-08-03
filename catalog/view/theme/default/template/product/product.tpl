@@ -288,11 +288,11 @@ AddThis Button END -->
 
 <div class="product-share">
 
-<a href="http://www.facebook.com/sharer/sharer.php?u=<?php $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; echo $url; ?>&title=<?php echo $heading_title; ?>" class="share">SHARE!</a>
+<a href="http://www.facebook.com/sharer/sharer.php?u=<?php $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; echo $url; ?>&title=<?php echo $heading_title; ?>" target="_blank" class="share">SHARE!</a>
 
-<a href="http://twitter.com/intent/tweet?status=<?php echo $heading_title; ?>+<?php $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; echo $url; ?>" class="tweet">TWEET!</a>
+<a href="http://twitter.com/intent/tweet?status=<?php echo $heading_title; ?>+<?php $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; echo $url; ?>" target="_blank" class="tweet">TWEET!</a>
 
-<a href="http://pinterest.com/pin/create/bookmarklet/?media=[MEDIA]&url=<?php $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; echo $url; ?>&is_video=false&description=<?php echo $heading_title; ?>" class="pin">PIN!</a>
+<a href="http://pinterest.com/pin/create/bookmarklet/?media=[MEDIA]&url=<?php $url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; echo $url; ?>&is_video=false&description=<?php echo $heading_title; ?>" target="_blank" class="pin">PIN!</a>
 
 <?php if ($minimum > 1) { ?>
 <div class="alert alert-info"><i class="fa fa-info-circle"></i> <?php echo $text_minimum; ?></div>

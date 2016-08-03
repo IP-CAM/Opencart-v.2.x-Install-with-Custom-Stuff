@@ -52,10 +52,10 @@ $(document).ready(function() {
 
 	/* Search */
 	/* Main Nav Search */
-	$('.header-main .nav-main .search-menu input[name=\'search\']').parent().find('button').on('click', function() {
+	$('.header .nav-main .search-menu input[name=\'search\']').parent().find('button').on('click', function() {
 		var url = $('base').attr('href') + 'index.php?route=product/search';
 
-		var value = $('.header-main .nav-main .search-menu input[name=\'search\']').val();
+		var value = $('.header .nav-main .search-menu input[name=\'search\']').val();
 
 		if (value) {
 			url += '&search=' + encodeURIComponent(value);
@@ -64,17 +64,17 @@ $(document).ready(function() {
 		location = url;
 	});
 
-	$('.header-main .nav-main .search-menu input[name=\'search\']').on('keydown', function(e) {
+	$('.header .nav-main .search-menu input[name=\'search\']').on('keydown', function(e) {
 		if (e.keyCode == 13) {
-			$('.header-main .nav-main .search-menu input[name=\'search\']').parent().find('button').trigger('click');
+			$('.header .nav-main .search-menu input[name=\'search\']').parent().find('button').trigger('click');
 		}
 	});
 
 	/* Add Mobile Nav Search */
-	$('.header-main .nav-mobile .search-menu input[name=\'search\']').parent().find('button').on('click', function() {
+	$('.header .nav-mobile .search-menu input[name=\'search\']').parent().find('button').on('click', function() {
 		var url = $('base').attr('href') + 'index.php?route=product/search';
 
-		var value = $('.header-main .nav-mobile .search-menu input[name=\'search\']').val();
+		var value = $('.header .nav-mobile .search-menu input[name=\'search\']').val();
 
 		if (value) {
 			url += '&search=' + encodeURIComponent(value);
@@ -83,9 +83,9 @@ $(document).ready(function() {
 		location = url;
 	});
 
-	$('.header-main .nav-mobile .search-menu input[name=\'search\']').on('keydown', function(e) {
+	$('.header .nav-mobile .search-menu input[name=\'search\']').on('keydown', function(e) {
 		if (e.keyCode == 13) {
-			$('.header-main .nav-mobile .search-menu input[name=\'search\']').parent().find('button').trigger('click');
+			$('.header .nav-mobile .search-menu input[name=\'search\']').parent().find('button').trigger('click');
 		}
 	});
 

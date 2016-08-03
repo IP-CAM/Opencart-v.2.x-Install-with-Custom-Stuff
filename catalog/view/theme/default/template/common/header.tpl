@@ -51,7 +51,7 @@
 
 <div class="loader"></div>
 
-<header id="header-main" class="header-main">
+<header id="header" class="header">
 
 <!-- MAIN NAV -->
 <nav id="nav" class="nav nav-main">

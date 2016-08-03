@@ -11,24 +11,28 @@
       <input type="text" name="lastname" value="<?php echo $lastname; ?>" placeholder="<?php echo $entry_lastname; ?>" id="input-shipping-lastname" class="form-control" />
     </div>
   </div>
-  <div class="form-group">
-    <label class="col-sm-2 control-label" for="input-shipping-company"><?php echo $entry_company; ?></label>
+  
+  <div style="display:none;" class="form-group">
+    <label class="col-sm-2 control-label" for="input-shipping-company"><!--?php echo $entry_company; ?--></label>
     <div class="col-sm-10">
       <input type="text" name="company" value="<?php echo $company; ?>" placeholder="<?php echo $entry_company; ?>" id="input-shipping-company" class="form-control" />
     </div>
   </div>
+  
   <div class="form-group required">
     <label class="col-sm-2 control-label" for="input-shipping-address-1"><?php echo $entry_address_1; ?></label>
     <div class="col-sm-10">
       <input type="text" name="address_1" value="<?php echo $address_1; ?>" placeholder="<?php echo $entry_address_1; ?>" id="input-shipping-address-1" class="form-control" />
     </div>
   </div>
-  <div class="form-group">
-    <label class="col-sm-2 control-label" for="input-shipping-address-2"><?php echo $entry_address_2; ?></label>
+  
+  <div style="display:none;" class="form-group">
+    <label class="col-sm-2 control-label" for="input-shipping-address-2"><!--?php echo $entry_address_2; ?--></label>
     <div class="col-sm-10">
       <input type="text" name="address_2" value="<?php echo $address_2; ?>" placeholder="<?php echo $entry_address_2; ?>" id="input-shipping-address-2" class="form-control" />
     </div>
   </div>
+  
   <div class="form-group required">
     <label class="col-sm-2 control-label" for="input-shipping-city"><?php echo $entry_city; ?></label>
     <div class="col-sm-10">

@@ -24,8 +24,8 @@
 -->
 
 <div class="footer-col footer-social col-xs-12 col-sm-3 col-sm-push-5">
-<a href=""><i class="fa fa-twitter fa-5x" aria-hidden="true"></i></a>
-<a href=""><i class="fa fa-instagram fa-5x" aria-hidden="true"></i></a>
+<a href="" target="_blank"><i class="fa fa-twitter fa-5x" aria-hidden="true"></i></a>
+<a href="" target="_blank"><i class="fa fa-instagram fa-5x" aria-hidden="true"></i></a>
 </div>
 
 <div class="footer-col footer-newsletter col-xs-12 col-sm-5 col-sm-pull-3">

@@ -1,25 +1,73 @@
+/* fonts */
+@font-face {
+font-family: 'Gotham-Book';
+src: url('Gotham-Book/Gotham-Book.eot?#iefix') format('embedded-opentype'),  url('Gotham-Book/Gotham-Book.otf')  format('opentype'),
+url('Gotham-Book/Gotham-Book.woff') format('woff'), url('Gotham-Book/Gotham-Book.ttf')  format('truetype'), url('Gotham-Book/Gotham-Book.svg#Gotham-Book') format('svg');
+font-weight: normal;
+font-style: normal;
+}
+@font-face {
+font-family: 'GothamBold';
+src: url('Gotham-Bold/GothamBold.eot?#iefix') format('embedded-opentype'),  url('Gotham-Bold/GothamBold.woff') format('woff'), url('Gotham-Bold/GothamBold.ttf')  format('truetype'), url('Gotham-Bold/GothamBold.svg#GothamBold') format('svg');
+font-weight: normal;
+font-style: normal;
+}
+
 body {
-	font-family: 'Open Sans', sans-serif;
-	font-weight: 400;
-	color: #666;
-	font-size: 12px;
-	line-height: 20px;
-	width: 100%;
+margin-top:60px;
+font-family:'Gotham-Book';
+font-weight:400;
+color:#58595B;
+font-size:14px;
+line-height:20px;
+width:100%;
 }
+
 h1, h2, h3, h4, h5, h6 {
-	color: #444;
+color:#58595B;
 }
+
+h1 {
+font-family:'GothamBold';
+font-size:36px;
+}
+
+h2 {
+font-family:'GothamBold';
+font-size:28px;
+}
+
+p {
+color:#58595B;
+}
+
+ul {
+margin:0;
+padding:0;
+list-style:none;
+}
+
+a {
+color:#58595B;
+text-decoration:none;
+}
+
+a:hover {
+text-decoration:none;
+}
+
+a:visited, a:active, a:focus {
+border:none;
+outline:none;
+text-decoration:none;
+}
+
 /* default font size
 .fa {
-	font-size: 14px;
+font-size: 14px;
 } */
 /* Override the bootstrap defaults */
-h1 {
-	font-size: 33px;
-}
-h2 {
-	font-size: 27px;
-}
+
 h3 {
 	font-size: 21px;
 }
@@ -32,12 +80,8 @@ h5 {
 h6 {
 	font-size: 10.2px;
 }
-a {
-	color: #23a1d1;
-}
-a:hover {
-	text-decoration: none;
-}
+
+
 legend {
 	font-size: 18px;
 	padding: 7px 0px
@@ -341,6 +385,7 @@ footer h5 {
 .alert {
 	padding: 8px 14px 8px 14px;
 }
+
 /* breadcrumb */
 .breadcrumb {
 	margin: 0 0 20px 0;
@@ -378,6 +423,7 @@ footer h5 {
 .pagination {
 	margin: 0;
 }
+
 /* buttons */
 .buttons {
 	margin: 1em 0;
@@ -758,23 +804,6 @@ NEW CUSTOM CSS MOTHAFUCKA IT'S LIT!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 ************************************************************************************************
 ***********************************************************************************************/
 
-
-@font-face {
-font-family: 'Gotham-Book';
-src: url('Gotham-Book/Gotham-Book.eot?#iefix') format('embedded-opentype'),  url('Gotham-Book/Gotham-Book.otf')  format('opentype'),
-url('Gotham-Book/Gotham-Book.woff') format('woff'), url('Gotham-Book/Gotham-Book.ttf')  format('truetype'), url('Gotham-Book/Gotham-Book.svg#Gotham-Book') format('svg');
-font-weight: normal;
-font-style: normal;
-}
-
-
-@font-face {
-font-family: 'GothamBold';
-src: url('Gotham-Bold/GothamBold.eot?#iefix') format('embedded-opentype'),  url('Gotham-Bold/GothamBold.woff') format('woff'), url('Gotham-Bold/GothamBold.ttf')  format('truetype'), url('Gotham-Bold/GothamBold.svg#GothamBold') format('svg');
-font-weight: normal;
-font-style: normal;
-}
-
 .loader {
 position:fixed;
 top:0;
@@ -787,40 +816,7 @@ background:#fff;
 z-index:100;
 }
 
-body {
-margin-top:60px;
-}
 
-h1 {
-font-family:'GothamBold';
-font-size:36px;
-font-weight:bold;
-color:#58595B;
-}
-
-h2 {
-font-family:'GothamBold';
-font-size:28px;
-font-weight:bold;
-color:#58595B;
-}
-
-ul {
-padding:0;
-}
-
-p {
-color:#58595B;
-}
-
-a {
-color:#000;
-}
-
-a:visited, a:active, a:focus {
-border:none;
-outline:none;
-}
 
 select:active, select:focus {
 border:none;
@@ -858,7 +854,9 @@ color:#ED1C24;
 margin: 15px auto;
 }
 
-header.header-main {
+/* HEADER/NAV */
+
+header {
 position:fixed;
 top:0;
 left:0;
@@ -867,10 +865,6 @@ width:100%;
 height:60px;
 z-index:10;
 background-color:#231F20;
-}
-
-header a, header a:visited, header a:active, header a:focus {
-text-decoration:none;
 }
 
 nav.nav {
@@ -885,14 +879,9 @@ display:block;
 display:none;
 }
 
-.nav ul {
-margin:0;
-}
 
-.nav li {
-display:inline;
-list-style-type:none;
-}
+
+
 
 .nav a {
 color:#fff;
@@ -912,13 +901,6 @@ height:60px;
 vertical-align:middle;
 }
 
-.nav-toggle button:hover {
-background:#fff;
-color:#231F20;
-transition: all .25s;
--webkit-transition: all .25s;
-}
-
 .nav-toggle button {
 height:60px;
 margin:0;
@@ -926,8 +908,15 @@ padding-left:15px;
 padding-right:15px;
 border:0;
 background:none;
-font-size:18px;
+font-size:22px;
 color:#fff;
+transition: all .25s;
+-webkit-transition: all .25s;
+}
+
+.nav-toggle button:hover {
+background:#fff;
+color:#231F20;
 transition: all .25s;
 -webkit-transition: all .25s;
 }
@@ -941,12 +930,12 @@ vertical-align:middle;
 }
 
 .nav-logo a {
-font-family: 'Gotham-Book';
-line-height:60px;
+display:inline-block;
+height:60px;
+font-family:'Gotham-Book';
 font-size:24px;
 font-weight:normal;
 text-transform:uppercase;
-vertical-align:middle;
 }
 
 .nav-content {
@@ -956,14 +945,13 @@ height:60px;
 
 .nav-main .nav-menu {
 display:inline-block;
-vertical-align:middle;
-}
-
-.nav-main .nav-menu {
 height:60px;
 padding-left:15px;
 padding-right:15px;
+vertical-align:middle;
 }
+
+
 
 .nav-main .nav-menu li {
 display: inline-block;
@@ -1031,43 +1019,41 @@ transition: all .25s;
 -webkit-transition: all .25s;
 }
 
-.nav-options button.nav-option-btn.search-btn {
-font-family: 'Gotham-Book';
+.nav-options button.nav-option-btn.search-btn,
+.nav-options button.nav-option-btn.cart-btn {
 font-size: 18px;
 }
 
-.nav-options button.nav-option-btn.currency-btn-main,
-.nav-options button.nav-option-btn.cart-btn {
-font-family: 'Gotham-Book';
+.nav-options button.nav-option-btn.currency-btn-main {
 font-size: 14px;
 }
 
-.header-main .search-menu {
+.header .search-menu {
 display:none;
-position: fixed;
-top: 60px;
-left: 0;
-right: 0;
-padding:75px 15px 75px;
+position:fixed;
+top:60px;
+left:0;
+right:0;
+padding: 75px 15px 75px;
 text-align:center;
 background-color:#fff;
 }
 
-.header-main .search-menu .search-title {
+.header .search-menu .search-title {
 display:inline-block;
 margin:0;
 padding:0 15px 15px;
 vertical-align:middle;
 }
 
-.header-main .search-menu .search-form {
+.header .search-menu .search-form {
 display:inline-block;
 margin:0;
 padding:0 15px;
 vertical-align:middle;
 }
 
-.header-main .search-menu input[name="search"] {
+.header .search-menu input[name="search"] {
 width:300px;
 height:60px;
 padding: 0 15px;
@@ -1368,7 +1354,7 @@ height:40px;
 padding:0 15px;
 background:#FFDE17;
 color:#ED1C24;
-z-index:5;
+z-index:3;
 }
 
 .banner-float p {
@@ -1469,6 +1455,7 @@ color:#58595B;
 .product-description ul {
 margin:0;
 padding-left:20px;
+list-style-type:disc;
 }
 
 .product-price {
@@ -1722,6 +1709,171 @@ margin: 60px 0;
 text-align: center;
 }
 
+/* CHECKOUT PAGE */
+
+/*.checkout-checkout header {
+display:none;
+}*/
+
+.checkout-checkout #content h1 {
+padding: 0 15px 0 30px;
+margin: 30px 0;
+}
+
+.checkout-checkout .banner-float {
+display:none;
+}
+
+.panel {
+margin-bottom:0;
+background-color:#fff;
+border: 2px solid transparent;
+border-radius:0;
+box-shadow:none;
+-webkit-box-shadow:none;
+-moz-box-shadow:none;
+-ms-box-shadow:none;
+}
+
+.panel-group .panel {
+margin-bottom:0;
+border-radius:0px;
+}
+
+.panel-default {
+border-width:2px;
+border-color:#F1F2F2;
+}
+
+.panel-heading {
+border-bottom: 1px solid #F1F2F2;
+border-top-left-radius:0;
+border-top-right-radius:0;
+}
+
+.panel-default>.panel-heading {
+height:40px;
+color:#58595B;
+background-color:#F1F2F2;
+border-color:#F1F2F2;
+}
+
+.panel-default>.panel-heading>.panel-title {
+font-family:'GothamBold';
+font-size:18px;
+color:#231F20;
+text-transform:uppercase;
+vertical-align:middle;
+}
+
+.panel-default>.panel-heading+.panel-collapse>.panel-body {
+border-top:none;
+}
+
+.checkout-content input.form-control {
+display: block;
+width: 100%;
+height: 40px;
+padding: 0px 15px;
+font-family: 'Gotham-Book';
+font-size: 14px;
+line-height: 1.42857143;
+color: #58595B;
+background-color: #fff;
+background-image: none;
+border: 2px solid #58595B;
+border-radius: 0;
+-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+-webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+-o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.checkout-content select.form-control {
+display: block;
+width: 100%;
+height: 40px;
+padding: 0px 15px;
+font-family: 'Gotham-Book';
+font-size: 14px;
+line-height: 1.42857143;
+color: #58595B;
+background-color: #fff;
+background-image: none;
+border: 2px solid #58595B;
+border-radius: 0;
+-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+-webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+-o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.checkout-content textarea.form-control {
+display: block;
+width: 100%;
+height: auto;
+padding: 0px 15px;
+font-family: 'Gotham-Book';
+font-size: 14px;
+line-height: 1.42857143;
+color: #58595B;
+background-color: #fff;
+background-image: none;
+border: 2px solid #58595B;
+border-radius: 0;
+-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+-webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+-o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.checkout-content .buttons .pull-right {
+float:none!important;
+text-align:center;
+}
+
+.checkout-content .checkbox {
+position: relative;
+display: block;
+margin-top: 15px;
+margin-bottom: 15px;
+text-align:center;
+}
+
+/*.checkout-checkout footer {
+display:none;
+}*/
+
+/* CHECKOUT SUCCESS PAGE */
+.checkout-success #content h1 {
+margin: 60px 0;
+text-align: center;
+text-transform:uppercase;
+}
+
+.success-content {
+margin-bottom:60px;
+text-align:center;
+}
+
+.success-content h2 {
+margin: 0 0 30px 0;
+text-align:center;
+}
+
+.success-content a {
+padding-left:15px;
+padding-right:15px;
+color:#58595B;
+}
+
+.success-content a:hover {
+color:#58595B;
+}
+
 /* ERROR PAGE */
 
 .error-page #content h1 {
@@ -1809,7 +1961,7 @@ color:#666;
 }
 
 /* BUTTONS */
-a.button, button.button, .button {
+a.button, button.button, .button, .checkout-content .btn.btn-primary {
 display:inline-block;
 height:60px;
 margin:0;
@@ -1842,7 +1994,7 @@ box-shadow:none;
 user-select:none;
 }
 
-a.button:hover, button.button:hover, .button:hover {
+a.button:hover, button.button:hover, .button:hover, .checkout-content .btn.btn-primary:hover {
 background:#231F20;
 color:#fff;
 }
@@ -1862,6 +2014,19 @@ width:150px;
 
 a.btn-full, button.btn-full, .btn-full {
 width:100%;
+}
+
+.checkout-content .btn.btn-primary {
+width:150px;
+/*height:40px;
+line-height:40px;
+font-size:14px;*/
+}
+
+.checkout-content #button-confirm.btn.btn-primary {
+width:auto;
+padding-left:15px;
+padding-right:15px;
 }
 
 .cart-btn .btn-danger {
@@ -1945,6 +2110,11 @@ color:#58595B;
 background:#F1F2F2;
 }
 
+.nav-options button.nav-option-btn.search-btn,
+.nav-options button.nav-option-btn.cart-btn {
+font-size: 22px;
+}
+
 .nav-mobile .currency-btn-mobile {
 display: block;
 width: 100%;
@@ -1975,16 +2145,16 @@ font-size:14px;
 color:#58595B;
 }
 
-.header-main .search-menu {
+.header .search-menu {
 padding: 30px 0px;
 }
 
-.header-main .search-menu .search-title {
+.header .search-menu .search-title {
 font-size:18px;
 line-height:20px;
 }
 
-.header-main .search-menu input[name="search"] {
+.header .search-menu input[name="search"] {
 width:250px;
 }
 
