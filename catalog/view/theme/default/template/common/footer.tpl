@@ -30,10 +30,6 @@
 
 <div class="footer-col footer-newsletter col-xs-12 col-sm-5 col-sm-pull-3">
 <input type="text" name="newsletter-subscribe" value="" placeholder="Email" class="input-main input-subscribe" /><input type="submit" value="Subscribe" class="button btn-main" />
-<!--
-<input type="text" name="search" value="<?php echo $search; ?>" placeholder="<?php echo $text_search; ?>" class="" />
-<button type="button" class="button btn-main">SEARCH</button>
--->
 </div>
 
 <div class="footer-col footer-nav col-xs-6 col-sm-2">
