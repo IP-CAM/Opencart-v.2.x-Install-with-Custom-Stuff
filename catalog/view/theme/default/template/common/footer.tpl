@@ -61,97 +61,176 @@
 </footer>
 
 <script>
-
 $(window).load(function() {
 	$(".loader").fadeOut("slow");
 });
 
+// variables
+var menuButton = ".nav-option-btn",
+	menu = ".nav-option-menu",
+	searchMenu = ".nav-option-menu.search-menu",
+	navMenu = ".nav-option-menu.nav-menu",
+	cartMenu = ".nav-option-menu.cart-menu",
+	currencyMainMenu = ".nav-option-menu.currency-menu-main",
+	currencyMobileMenu = ".currency-menu-mobile",
+	overlay = "body > .overlay",
+	visible = ":visible";
+
+// overlay on/off functions
 function overlayOn(){
-$("body > .overlay").show();
-$("body > .overlay").animate({
+$(overlay).show();
+$(overlay).animate({
 	"opacity": ".5"
 });
 }
-
 function overlayOff(){
-$("body > .overlay").fadeOut();
-$("body > .overlay").animate({
+$(overlay).fadeOut();
+$(overlay).animate({
 	"opacity": "0"
 });
 }
+// check for corresponding menu 
+function findMenu(varBtn,varMenu){
+return $(varBtn).parent().next(varMenu);
+}
+// find menu and open/close
+function openMenu(varBtn1,varMenu1,varSide1){
+findMenu(varBtn1,varMenu1).stop(true,true).show("slide", {direction: varSide1});
+}
+function closeMenu(varBtn2,varMenu2,varSide2){
+findMenu(varBtn2,varMenu2).stop(true,true).hide("slide", {direction: varSide2});
+}
+// open/close search menu
+function searchAction(varSearchAction){
+	if (varSearchAction === "open") {
+	$(searchMenu).slideDown();
+	}
+	if (varSearchAction === "close") {
+	$(searchMenu).slideUp();
+	}
+}
+// close selected menu
+function closeMenus(varMenu3,varSide3){
+$(varMenu3).stop(true,true).hide("slide", {direction: varSide3});
+}
 
 // navigation menus toggle
-$(".nav-option-btn").click(function(){
+$(menuButton).click(function(){
+	// check if button is active
 	if ($(this).hasClass("btn-active")) {
 		$(this).removeClass("btn-active");
 	} else {
-		$(".nav-option-btn").removeClass("btn-active");
+		$(menuButton).removeClass("btn-active");
 		$(this).addClass("btn-active");
 	}
-	if ($(this).parent().next("nav .nav-option-menu").is(":visible")) {
-		if ($(this).parent().next("nav .nav-option-menu").is(".search-menu")) {
-			$("nav .nav-option-menu.search-menu").slideUp();
+	// check if corresponding menu is open
+	if (findMenu(this,menu).is(visible)) {
+		// check if open menu is the search menu
+		if (findMenu(this,menu).is(searchMenu)) {
+			searchAction("close");
 			overlayOff();
+		// check if open menu is the nav menu
+		} else if (findMenu(this,menu).is(navMenu)) {
+			closeMenus(navMenu,"left");
+			overlayOff();
+		// check if open menu is either the cart menu or the main currency menu
 		} else {
-			$(this).parent().next("nav .nav-option-menu").stop(true,true).hide("slide", {direction: "right"});
+			closeMenu(this,menu,"right");
 			overlayOff();
 		}
 	} else {
+		// check if button clicked is the search menu button then close all other menus
 		if ($(this).is(".search-btn")) {
-			$("nav .nav-option-menu").stop(true,true).hide("slide", {direction: "right"});
-			$("nav .nav-option-menu.search-menu").slideDown();
+			closeMenus(navMenu,"left");
+			closeMenus(currencyMainMenu,"right");
+			closeMenus(cartMenu,"right");
+			searchAction("open");
 			overlayOn();
 			$("nav .search-menu > .search-form > input[name='search']").focus();
-		} else {
-			if ($("nav .nav-option-menu.search-menu").is(":visible")) {
-				$("nav .nav-option-menu.search-menu").slideUp();
-				$(this).parent().next("nav .nav-option-menu").stop(true,true).show("slide", {direction: "right"});
+		// check if button clicked is the nav menu button
+		} else if ($(this).is(".nav-btn")) {
+			// check if search menu is open then close search menu and open nav menu
+			if ($(searchMenu).is(visible)) {
+				searchAction("close");
+				openMenu(this,navMenu,"left");
 				overlayOn();
+			// check if cart menu is open then close cart menu and open nav menu
 			} else {
-				$("nav .nav-option-menu").stop(true,true).hide("slide", {direction: "right"});
-				$(this).parent().next("nav .nav-option-menu").stop(true,true).show("slide", {direction: "right"});
+				closeMenus(cartMenu,"right");
+				openMenu(this,navMenu,"left");
+				overlayOn();
+			}
+		// check if button clicked is the main currency menu button
+		} else if ($(this).is(".currency-btn-main")) {
+			// check if search menu is open then close search menu and open main currency menu
+			if ($(searchMenu).is(visible)) {
+				searchAction("close");
+				openMenu(this,currencyMainMenu,"right");
+				overlayOn();
+			// check if cart menu is open then close cart menu and open main currency menu
+			} else {
+				closeMenus(cartMenu,"right");
+				openMenu(this,currencyMainMenu,"right");
+				overlayOn();
+			}
+		// check if button clicked is the cart menu button
+		} else {
+			// check if search menu is open then close search menu and open cart menu
+			if ($(searchMenu).is(visible)) {
+				searchAction("close");
+				openMenu(this,cartMenu,"right");
+				overlayOn();
+			// check if main currency menu is open then close main currency menu and open cart menu
+			} else if ($(currencyMainMenu).is(visible)) {
+				closeMenus(currencyMainMenu,"right");
+				openMenu(this,cartMenu,"right");
+				overlayOn();
+			// check is nav menu is open then close nav menu and open cart menu
+			} else  {
+				closeMenus(navMenu,"left");
+				openMenu(this,cartMenu,"right");
 				overlayOn();
 			}
 		}
 	}
-	if ($(".currency-menu-mobile").is(":visible")) {
-		$(".currency-menu-mobile").slideUp();
+	// check if mobile currency menu is open
+	if ($(currencyMobileMenu).is(visible)) {
+		$(currencyMobileMenu).slideUp();
 	}
-});
-
-// overlay click event
-$("body > .overlay").click(function(){
-	$(".nav-option-btn").removeClass("btn-active");
-	if ($("nav .nav-option-menu.search-menu").is(":visible")) {
-		$("nav .nav-option-menu.search-menu").slideUp();
-		overlayOff();
-	} else {
-		$("nav .nav-option-menu").stop(true,true).hide("slide", {direction: "right"});
-		overlayOff();
-	}
-});
-
-// add/remove overlay on resize (if nec)
-$(window).resize(function(){
-if (!($(".nav-option-menu").is(":visible")) && ($("body > .overlay").is(":visible"))) {
-	overlayOff();
-}
-if (($(".nav-option-menu").is(":visible")) && !($("body > .overlay").is(":visible"))) {
-	overlayOn();
-}
 });
 
 // mobile currency menu toggle
 $(".currency-btn-mobile").click(function(){
-	if ($(".currency-menu-mobile").is(":visible")) {
-		$(".currency-menu-mobile").slideUp();
+	if ($(currencyMobileMenu).is(visible)) {
+		$(currencyMobileMenu).slideUp();
 	} else {
-		$(".currency-menu-mobile").slideDown();
+		$(currencyMobileMenu).slideDown();
 	}
 });
 
-// small screen clearfix for product grid
+// overlay click event
+$(overlay).click(function(){
+	$(menuButton).removeClass("btn-active");
+	if ($(searchMenu).is(visible)) {
+		searchAction("close");
+		overlayOff();
+	} else {
+		$(menu).stop(true,true).hide("slide", {direction: "right"});
+		overlayOff();
+	}
+});
 
+// add/remove overlay on resize (if nec.)
+$(window).resize(function(){
+if (!($(menu).is(visible)) && ($(overlay).is(visible))) {
+	overlayOff();
+}
+if (($(menu).is(visible)) && !($(overlay).is(visible))) {
+	overlayOn();
+}
+});
+
+// small screen clearfix for product grid
 $(window).on("load resize", function(){
 	var width = $(window).width();
 	if ((width < 400) && (!$(".clearfix.product-clear").length)) {
@@ -161,8 +240,7 @@ $(window).on("load resize", function(){
 	}
 });
 
-
-// product color test
+// product color option
 $(".product-options .image-option .radio").click(function(){
 if ($(".product-options .image-option .radio label input[type=radio]").is(":checked")){
 	$(this).find("img").css("border", "solid 2px #58595B");
@@ -192,7 +270,6 @@ $(document).scroll(function(){
 checkOffset();
 });
 });
-
 </script>
 
 </body>
