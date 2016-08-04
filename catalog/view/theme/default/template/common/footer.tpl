@@ -76,29 +76,33 @@ var menuButton = ".nav-option-btn",
 	overlay = "body > .overlay",
 	visible = ":visible";
 
-// overlay on/off functions
-function overlayOn(){
-$(overlay).show();
-$(overlay).animate({
-	"opacity": ".5"
-});
-}
-function overlayOff(){
-$(overlay).fadeOut();
-$(overlay).animate({
-	"opacity": "0"
-});
+// overlay on/off
+function overlayAction(varOverlayAction){
+	if (varOverlayAction === "on") {
+		$(overlay).show();
+		$(overlay).animate({
+			"opacity": ".5"
+		});
+	}
+	if (varOverlayAction === "off") {
+		$(overlay).fadeOut();
+		$(overlay).animate({
+			"opacity": "0"
+		});
+	}
 }
 // check for corresponding menu 
 function findMenu(varBtn,varMenu){
 return $(varBtn).parent().next(varMenu);
 }
 // find menu and open/close
-function openMenu(varBtn1,varMenu1,varSide1){
-findMenu(varBtn1,varMenu1).stop(true,true).show("slide", {direction: varSide1});
-}
-function closeMenu(varBtn2,varMenu2,varSide2){
-findMenu(varBtn2,varMenu2).stop(true,true).hide("slide", {direction: varSide2});
+function menuAction(varAction,varBtn1,varMenu1,varSide1){
+	if (varAction === "open") {
+		findMenu(varBtn1,varMenu1).stop(true,true).show("slide", {direction: varSide1});
+	}
+	if (varAction === "close") {
+		findMenu(varBtn1,varMenu1).stop(true,true).hide("slide", {direction: varSide1});
+	}
 }
 // open/close search menu
 function searchAction(varSearchAction){
@@ -110,8 +114,8 @@ function searchAction(varSearchAction){
 	}
 }
 // close selected menu
-function closeMenus(varMenu3,varSide3){
-$(varMenu3).stop(true,true).hide("slide", {direction: varSide3});
+function closeMenu(varMenu2,varSide2){
+$(varMenu2).stop(true,true).hide("slide", {direction: varSide2});
 }
 
 // navigation menus toggle
@@ -128,68 +132,68 @@ $(menuButton).click(function(){
 		// check if open menu is the search menu
 		if (findMenu(this,menu).is(searchMenu)) {
 			searchAction("close");
-			overlayOff();
+			overlayAction("off");
 		// check if open menu is the nav menu
 		} else if (findMenu(this,menu).is(navMenu)) {
-			closeMenus(navMenu,"left");
-			overlayOff();
+			closeMenu(navMenu,"left");
+			overlayAction("off");
 		// check if open menu is either the cart menu or the main currency menu
 		} else {
-			closeMenu(this,menu,"right");
-			overlayOff();
+			menuAction("close",this,menu,"right");
+			overlayAction("off");
 		}
 	} else {
 		// check if button clicked is the search menu button then close all other menus
 		if ($(this).is(".search-btn")) {
-			closeMenus(navMenu,"left");
-			closeMenus(currencyMainMenu,"right");
-			closeMenus(cartMenu,"right");
+			closeMenu(navMenu,"left");
+			closeMenu(currencyMainMenu,"right");
+			closeMenu(cartMenu,"right");
 			searchAction("open");
-			overlayOn();
+			overlayAction("on");
 			$("nav .search-menu > .search-form > input[name='search']").focus();
 		// check if button clicked is the nav menu button
 		} else if ($(this).is(".nav-btn")) {
 			// check if search menu is open then close search menu and open nav menu
 			if ($(searchMenu).is(visible)) {
 				searchAction("close");
-				openMenu(this,navMenu,"left");
-				overlayOn();
+				menuAction("open",this,navMenu,"left");
+				overlayAction("on");
 			// check if cart menu is open then close cart menu and open nav menu
 			} else {
-				closeMenus(cartMenu,"right");
-				openMenu(this,navMenu,"left");
-				overlayOn();
+				closeMenu(cartMenu,"right");
+				menuAction("open",this,navMenu,"left");
+				overlayAction("on");
 			}
 		// check if button clicked is the main currency menu button
 		} else if ($(this).is(".currency-btn-main")) {
 			// check if search menu is open then close search menu and open main currency menu
 			if ($(searchMenu).is(visible)) {
 				searchAction("close");
-				openMenu(this,currencyMainMenu,"right");
-				overlayOn();
+				menuAction("open",this,currencyMainMenu,"right");
+				overlayAction("on");
 			// check if cart menu is open then close cart menu and open main currency menu
 			} else {
-				closeMenus(cartMenu,"right");
-				openMenu(this,currencyMainMenu,"right");
-				overlayOn();
+				closeMenu(cartMenu,"right");
+				menuAction("open",this,currencyMainMenu,"right");
+				overlayAction("on");
 			}
 		// check if button clicked is the cart menu button
 		} else {
 			// check if search menu is open then close search menu and open cart menu
 			if ($(searchMenu).is(visible)) {
 				searchAction("close");
-				openMenu(this,cartMenu,"right");
-				overlayOn();
+				menuAction("open",this,cartMenu,"right");
+				overlayAction("on");
 			// check if main currency menu is open then close main currency menu and open cart menu
 			} else if ($(currencyMainMenu).is(visible)) {
-				closeMenus(currencyMainMenu,"right");
-				openMenu(this,cartMenu,"right");
-				overlayOn();
+				closeMenu(currencyMainMenu,"right");
+				menuAction("open",this,cartMenu,"right");
+				overlayAction("on");
 			// check is nav menu is open then close nav menu and open cart menu
 			} else  {
-				closeMenus(navMenu,"left");
-				openMenu(this,cartMenu,"right");
-				overlayOn();
+				closeMenu(navMenu,"left");
+				menuAction("open",this,cartMenu,"right");
+				overlayAction("on");
 			}
 		}
 	}
@@ -213,20 +217,20 @@ $(overlay).click(function(){
 	$(menuButton).removeClass("btn-active");
 	if ($(searchMenu).is(visible)) {
 		searchAction("close");
-		overlayOff();
+		overlayAction("off");
 	} else {
 		$(menu).stop(true,true).hide("slide", {direction: "right"});
-		overlayOff();
+		overlayAction("off");
 	}
 });
 
 // add/remove overlay on resize (if nec.)
 $(window).resize(function(){
 if (!($(menu).is(visible)) && ($(overlay).is(visible))) {
-	overlayOff();
+	overlayAction("off");
 }
 if (($(menu).is(visible)) && !($(overlay).is(visible))) {
-	overlayOn();
+	overlayAction("on");
 }
 });
 
