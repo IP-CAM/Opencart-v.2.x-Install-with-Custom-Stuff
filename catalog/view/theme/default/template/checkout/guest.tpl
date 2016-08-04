@@ -35,13 +35,13 @@
 	  
       <div style="display:none;" class="form-group required">
         <label class="control-label" for="input-payment-telephone"><!--?php echo $entry_telephone; ?--></label>
-        <input style="display:none" type="text" name="telephone" value="<?php echo $telephone; ?>" placeholder="<?php echo $entry_telephone; ?>" id="input-payment-telephone" class="form-control" />
+        <input style="display:none" type="text" name="telephone" value="&nbsp" placeholder="<?php echo $entry_telephone; ?>" id="input-payment-telephone" class="form-control" />
       </div>
 	  
 	  
       <div style="display:none;" class="form-group">
         <label class="control-label" for="input-payment-fax"><!--?php echo $entry_fax; ?--></label>
-        <input style="display:none" type="text" name="fax" value="<?php echo $fax; ?>" placeholder="<?php echo $entry_fax; ?>" id="input-payment-fax" class="form-control" />
+        <input style="display:none" type="text" name="fax" value="&nbsp" placeholder="<?php echo $entry_fax; ?>" id="input-payment-fax" class="form-control" />
       </div>
 	  
       <?php foreach ($custom_fields as $custom_field) { ?>
@@ -161,7 +161,7 @@
 	  
       <div style="display:none;" class="form-group">
         <label class="control-label" for="input-payment-company"><!--?php echo $entry_company; ?--></label>
-        <input style="display:none" type="text" name="company" value="<?php echo $company; ?>" placeholder="<?php echo $entry_company; ?>" id="input-payment-company" class="form-control" />
+        <input style="display:none" type="text" name="company" value="&nbsp" placeholder="<?php echo $entry_company; ?>" id="input-payment-company" class="form-control" />
       </div>
 	  
       <div class="form-group required">
@@ -171,7 +171,7 @@
 	  
       <div style="display:none;" class="form-group">
         <label class="control-label" for="input-payment-address-2"><!--?php echo $entry_address_2; ?--></label>
-        <input style="display:none" type="text" name="address_2" value="<?php echo $address_2; ?>" placeholder="<?php echo $entry_address_2; ?>" id="input-payment-address-2" class="form-control" />
+        <input style="display:none" type="text" name="address_2" value="&nbsp" placeholder="<?php echo $entry_address_2; ?>" id="input-payment-address-2" class="form-control" />
       </div>
 	  
       <div class="form-group required">

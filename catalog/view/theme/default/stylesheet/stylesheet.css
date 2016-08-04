@@ -1918,6 +1918,10 @@ margin-bottom: 15px;
 text-align:center;
 }
 
+.checkout-content .table-responsive .table {
+table-layout:auto;
+}
+
 .checkout-content .new-customer {
 margin-bottom:30px;
 }
