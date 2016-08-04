@@ -8,6 +8,7 @@
   <div class="row">
     <div id="content" class="checkout-content col-sm-12">
 	<?php echo $content_top; ?>
+	  <div class="checkout-header"><a href="">THE JERSEY HUB</a></div>
       <h1><?php echo $heading_title; ?></h1>
       <div class="panel-group" id="accordion">
         <div class="panel panel-default">
@@ -73,6 +74,9 @@
         </div>
       </div>
       <?php echo $content_bottom; ?>
+	  <div class="checkout-footer">
+		<p class="text-center"><a href="">< Continue shopping</a></p>
+	  </div>
 	  </div>
     </div>
 </div>

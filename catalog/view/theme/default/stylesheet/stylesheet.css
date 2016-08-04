@@ -1745,11 +1745,39 @@ text-align: center;
 
 /* CHECKOUT PAGE */
 
-/*.checkout-checkout header {
+body.checkout-checkout {
+margin-top:0;
+}
+
+.checkout-checkout header {
 display:none;
-}*/
+}
+.checkout-checkout footer {
+display:none;
+}
+
+.checkout-header {
+margin: 20px 0px;
+padding: 0 15px 0 30px;
+}
+
+.checkout-header a {
+font-family:'Gotham-Book';
+font-size:18px;
+color:#58595B;
+}
+
+.checkout-header a:hover,
+.checkout-footer a:hover {
+color:#58595B;
+}
+
+.checkout-checkout #content {
+margin-bottom:20px;
+}
 
 .checkout-checkout #content h1 {
+display:none;
 padding: 0 15px 0 30px;
 margin: 30px 0;
 }
@@ -1898,10 +1926,6 @@ margin-bottom:30px;
 .checkout-content .returning-customer h2 {
 margin-top:0;
 }
-
-/*.checkout-checkout footer {
-display:none;
-}*/
 
 /* CHECKOUT SUCCESS PAGE */
 .checkout-success #content h1 {
