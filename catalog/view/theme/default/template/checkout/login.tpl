@@ -2,7 +2,7 @@
 $(document).ready(function(){
 setTimeout(function(){
 $('#button-account').trigger('click');
-},1000);
+},500);
 });
 </script>
 <div class="row">

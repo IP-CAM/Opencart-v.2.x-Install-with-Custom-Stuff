@@ -1773,6 +1773,7 @@ color:#58595B;
 }
 
 .checkout-checkout #content {
+min-height:1px;
 margin-bottom:20px;
 }
 
@@ -1888,7 +1889,7 @@ transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 .checkout-content textarea.form-control {
 display: block;
 width: 100%;
-height: auto;
+height: 100px;
 padding: 0px 15px;
 font-family: 'Gotham-Book';
 font-size: 14px;
