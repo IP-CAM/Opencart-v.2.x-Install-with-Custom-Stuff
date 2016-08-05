@@ -420,7 +420,7 @@ $('#button-cart').on('click', function() {
 				// @mrlit ---> OPEN CART AFTER ADDING PRODUCT
 				$('.cart-btn').addClass('btn-active');
 				$('.cart-menu').show("slide", {direction: "right"});
-				overlayOn();
+				overlayAction(on);
 
 				$('#cart ul').load('index.php?route=common/cart/info ul li');
 			}

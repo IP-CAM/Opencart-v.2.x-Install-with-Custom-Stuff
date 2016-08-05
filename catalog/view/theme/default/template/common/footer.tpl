@@ -99,7 +99,7 @@ function overlayAction(varOverlayAction){
 }
 // check for corresponding menu 
 function findMenu(varBtn,varMenu){
-return $(varBtn).parent().next(varMenu);
+	return $(varBtn).parent().next(varMenu);
 }
 // find menu and open/close
 function menuAction(varAction,varBtn1,varMenu1,varSide1){
@@ -113,15 +113,15 @@ function menuAction(varAction,varBtn1,varMenu1,varSide1){
 // open/close search menu
 function searchAction(varSearchAction){
 	if (varSearchAction === open) {
-	$(searchMenu).slideDown();
+		$(searchMenu).slideDown();
 	}
 	if (varSearchAction === close) {
-	$(searchMenu).slideUp();
+		$(searchMenu).slideUp();
 	}
 }
 // close selected menu
 function closeMenu(varMenu2,varSide2){
-$(varMenu2).stop(true,true).hide("slide", {direction: varSide2});
+	$(varMenu2).stop(true,true).hide("slide", {direction: varSide2});
 }
 
 // navigation menus toggle
@@ -252,12 +252,12 @@ $(window).on("load resize", function(){
 
 // product color option
 $(".product-options .image-option .radio").click(function(){
-if ($(".product-options .image-option .radio label input[type=radio]").is(":checked")){
-	$(this).find("img").css("border", "solid 2px #58595B");
-}
-$(".product-options .image-option .radio").not(this).each(function(){
-	$(this).find("img").css("border", "solid 2px transparent");
-});
+	if ($(".product-options .image-option .radio label input[type=radio]").is(":checked")){
+		$(this).find("img").css("border", "solid 2px #58595B");
+	}
+	$(".product-options .image-option .radio").not(this).each(function(){
+		$(this).find("img").css("border", "solid 2px transparent");
+	});
 });
 
 // floating banner

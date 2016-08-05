@@ -200,7 +200,7 @@ var cart = {
 
 					// @mrlit ---> OPEN CART AFTER ADDING PRODUCT
 					$('.cart-menu').show("slide", {direction: "right"});
-					overlayOn();
+					overlayAction(on);
 
 					$('#cart ul').load('index.php?route=common/cart/info');
 				}
@@ -265,7 +265,7 @@ var cart = {
 				
 				$('.cart-menu').hide("slide", {direction: "right"});
 				$('.cart-btn').removeClass('btn-active');
-				overlayOff();
+				overlayAction(off);
 				
 			},
 			error: function(xhr, ajaxOptions, thrownError) {
