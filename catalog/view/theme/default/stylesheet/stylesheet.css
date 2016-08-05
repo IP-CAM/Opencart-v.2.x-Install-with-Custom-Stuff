@@ -1130,7 +1130,7 @@ color:#000;
 
 .cart-menu-container {
 position: absolute;
-top:30px;
+top:25px;
 bottom:25px;
 left:25px;
 right:25px;
@@ -1142,7 +1142,7 @@ text-align:center;
 text-transform:uppercase;
 }
 
-.cart-empty {
+.cart-empty p {
 font-family:'Gotham-Book';
 font-size:18px;
 color:#595959;
@@ -1239,8 +1239,12 @@ border-top:solid 2px #58595B;
 background:#fff;
 }
 
-.cart-menu-bottom .cart-total p:nth-child(2) {
+.cart-menu-bottom .cart-total p {
 display:none;
+}
+
+.cart-menu-bottom .cart-total p:first-child {
+display:block;
 }
 
 .cart-menu-bottom .cart-total {
@@ -1743,6 +1747,22 @@ margin: 60px 0;
 text-align: center;
 }
 
+.cart-page .table-responsive .table {
+table-layout:auto;
+}
+
+.cart-page .img-thumbnail {
+border: none;
+border-radius: 0;
+}
+
+.cart-page .form-control {
+border-radius:0;
+-webkit-border-radius:0;
+-moz-border-radius:0;
+-ms-border-radius:0;
+}
+
 /* CHECKOUT PAGE */
 
 body.checkout-checkout {
@@ -2110,7 +2130,7 @@ line-height:40px;
 font-size:14px;*/
 }
 
-.checkout-content #button-confirm.btn.btn-primary {
+a.btn-auto, button.btn-auto, .btn-auto, .checkout-content #button-confirm.btn.btn-primary {
 width:auto;
 padding-left:15px;
 padding-right:15px;
@@ -2128,6 +2148,57 @@ color: #fff;
 .cart-btn .btn-danger:hover {
 background: #ED1C24;
 color: #fff;
+}
+
+.btn {
+padding: 7.5px 12px;
+font-family:'Gotham-Book';
+font-size: 12px;
+text-transform:uppercase;
+border: 1px solid #231F20;
+border-radius:0;
+box-shadow:none;
+}
+.btn-primary {
+color: #ffffff;
+text-shadow:none;
+background-color:#231F20;
+background-image:none;
+background-repeat:no-repeat;
+border-color:#231F20;
+}
+.btn-primary:hover, .btn-primary:active, .btn-primary.active, .btn-primary.disabled, .btn-primary[disabled] {
+background-color:#231F20;
+background-position: 0 0;
+}
+.btn-danger {
+color: #ffffff;
+text-shadow:none;
+background-color:#ED1C24;
+background-image:none;
+background-repeat:no-repeat;
+border-color:#ED1C24;
+}
+
+.cart-update {
+color: #ffffff;
+text-shadow:none;
+background-color: #229ac8;
+background-image:none;
+background-repeat:no-repeat;
+border-color:#229ac8;
+}
+.cart-update:hover {
+background-color:#145e7a;
+border-color:#145e7a;
+}
+
+/* ALERT BOX */
+.alert {
+border-radius:0;
+-webkit-border-radius:0;
+-moz-border-radius:0;
+-ms-border-radius:0;
 }
 
 /* MEDIA QUERIES */

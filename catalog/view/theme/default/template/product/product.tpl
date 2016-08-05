@@ -412,17 +412,16 @@ $('#button-cart').on('click', function() {
 
 			if (json['success']) {
 				<!--$('.breadcrumb').after('<div class="alert alert-success">' + json['success'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');-->
+				<!--$('button.cart-btn').html('<i class="fa fa-shopping-cart"></i> ' + json['total']);-->
 
-				//$('button.cart-btn').html('<i class="fa fa-shopping-cart"></i> ' + json['total']);
-
-				$('html, body').animate({ scrollTop: 0 }, 'slow');
-
-				// @mrlit ---> OPEN CART AFTER ADDING PRODUCT
+				// @mrlit // open cart after adding product
 				$('.cart-btn').addClass('btn-active');
 				$('.cart-menu').show("slide", {direction: "right"});
 				overlayAction(on);
 
-				$('#cart ul').load('index.php?route=common/cart/info ul li');
+				$('html, body').animate({ scrollTop: 0 }, 'slow');
+
+				$('#cart > .cart-menu-container').load('index.php?route=common/cart/info .cart-menu-container > div');
 			}
 		},
         error: function(xhr, ajaxOptions, thrownError) {

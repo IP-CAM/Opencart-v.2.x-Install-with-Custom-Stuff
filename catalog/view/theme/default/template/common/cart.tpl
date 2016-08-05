@@ -9,11 +9,11 @@
 
 <div class="cart-menu-container">
 
-<ul>
+<!--<ul>-->
 
 <?php if ($products || $vouchers) { ?>
 
-<li>
+<!--<li>-->
 
 <div class="cart-menu-top">
 
@@ -73,9 +73,9 @@
 
 </div>
 
-</li>
+<!--</li>-->
 
-<li>
+<!--<li>-->
 
 <div class="cart-menu-bottom">
 
@@ -88,16 +88,16 @@
 
 </div>
 
-</li>
+<!--</li>-->
 
 <?php } else { ?>
-<li>
+<div class="cart-empty">
 <h1 class="cart-menu-header"><?php echo $text_cart_title; ?></h1>
-<p class="text-center cart-empty"><?php echo $text_empty; ?></p>
-</li>
+<p class="text-center"><?php echo $text_empty; ?></p>
+</div>
 <?php } ?>
 
-</ul>
+<!--</ul>-->
 
 </div>
 
