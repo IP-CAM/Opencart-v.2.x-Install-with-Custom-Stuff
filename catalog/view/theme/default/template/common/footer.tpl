@@ -74,17 +74,23 @@ var menuButton = ".nav-option-btn",
 	currencyMainMenu = ".nav-option-menu.currency-menu-main",
 	currencyMobileMenu = ".currency-menu-mobile",
 	overlay = "body > .overlay",
-	visible = ":visible";
+	visible = ":visible",
+	open = "open",
+	close = "close",
+	on = "on",
+	off = "off",
+	left = "left",
+	right = "right";
 
 // overlay on/off
 function overlayAction(varOverlayAction){
-	if (varOverlayAction === "on") {
+	if (varOverlayAction === on) {
 		$(overlay).show();
 		$(overlay).animate({
 			"opacity": ".5"
 		});
 	}
-	if (varOverlayAction === "off") {
+	if (varOverlayAction === off) {
 		$(overlay).fadeOut();
 		$(overlay).animate({
 			"opacity": "0"
@@ -97,19 +103,19 @@ return $(varBtn).parent().next(varMenu);
 }
 // find menu and open/close
 function menuAction(varAction,varBtn1,varMenu1,varSide1){
-	if (varAction === "open") {
+	if (varAction === open) {
 		findMenu(varBtn1,varMenu1).stop(true,true).show("slide", {direction: varSide1});
 	}
-	if (varAction === "close") {
+	if (varAction === close) {
 		findMenu(varBtn1,varMenu1).stop(true,true).hide("slide", {direction: varSide1});
 	}
 }
 // open/close search menu
 function searchAction(varSearchAction){
-	if (varSearchAction === "open") {
+	if (varSearchAction === open) {
 	$(searchMenu).slideDown();
 	}
-	if (varSearchAction === "close") {
+	if (varSearchAction === close) {
 	$(searchMenu).slideUp();
 	}
 }
@@ -131,69 +137,69 @@ $(menuButton).click(function(){
 	if (findMenu(this,menu).is(visible)) {
 		// check if open menu is the search menu
 		if (findMenu(this,menu).is(searchMenu)) {
-			searchAction("close");
-			overlayAction("off");
+			searchAction(close);
+			overlayAction(off);
 		// check if open menu is the nav menu
 		} else if (findMenu(this,menu).is(navMenu)) {
-			closeMenu(navMenu,"left");
-			overlayAction("off");
+			closeMenu(navMenu,left);
+			overlayAction(off);
 		// check if open menu is either the cart menu or the main currency menu
 		} else {
-			menuAction("close",this,menu,"right");
-			overlayAction("off");
+			menuAction(close,this,menu,right);
+			overlayAction(off);
 		}
 	} else {
 		// check if button clicked is the search menu button then close all other menus
 		if ($(this).is(".search-btn")) {
-			closeMenu(navMenu,"left");
-			closeMenu(currencyMainMenu,"right");
-			closeMenu(cartMenu,"right");
-			searchAction("open");
-			overlayAction("on");
+			closeMenu(navMenu,left);
+			closeMenu(currencyMainMenu,right);
+			closeMenu(cartMenu,right);
+			searchAction(open);
+			overlayAction(on);
 			$("nav .search-menu > .search-form > input[name='search']").focus();
 		// check if button clicked is the nav menu button
 		} else if ($(this).is(".nav-btn")) {
 			// check if search menu is open then close search menu and open nav menu
 			if ($(searchMenu).is(visible)) {
-				searchAction("close");
-				menuAction("open",this,navMenu,"left");
-				overlayAction("on");
+				searchAction(close);
+				menuAction(open,this,navMenu,left);
+				overlayAction(on);
 			// check if cart menu is open then close cart menu and open nav menu
 			} else {
-				closeMenu(cartMenu,"right");
-				menuAction("open",this,navMenu,"left");
-				overlayAction("on");
+				closeMenu(cartMenu,right);
+				menuAction(open,this,navMenu,left);
+				overlayAction(on);
 			}
 		// check if button clicked is the main currency menu button
 		} else if ($(this).is(".currency-btn-main")) {
 			// check if search menu is open then close search menu and open main currency menu
 			if ($(searchMenu).is(visible)) {
-				searchAction("close");
-				menuAction("open",this,currencyMainMenu,"right");
-				overlayAction("on");
+				searchAction(close);
+				menuAction(open,this,currencyMainMenu,right);
+				overlayAction(on);
 			// check if cart menu is open then close cart menu and open main currency menu
 			} else {
-				closeMenu(cartMenu,"right");
-				menuAction("open",this,currencyMainMenu,"right");
-				overlayAction("on");
+				closeMenu(cartMenu,right);
+				menuAction(open,this,currencyMainMenu,right);
+				overlayAction(on);
 			}
 		// check if button clicked is the cart menu button
 		} else {
 			// check if search menu is open then close search menu and open cart menu
 			if ($(searchMenu).is(visible)) {
-				searchAction("close");
-				menuAction("open",this,cartMenu,"right");
-				overlayAction("on");
+				searchAction(close);
+				menuAction(open,this,cartMenu,right);
+				overlayAction(on);
 			// check if main currency menu is open then close main currency menu and open cart menu
 			} else if ($(currencyMainMenu).is(visible)) {
-				closeMenu(currencyMainMenu,"right");
-				menuAction("open",this,cartMenu,"right");
-				overlayAction("on");
+				closeMenu(currencyMainMenu,right);
+				menuAction(open,this,cartMenu,right);
+				overlayAction(on);
 			// check is nav menu is open then close nav menu and open cart menu
 			} else  {
-				closeMenu(navMenu,"left");
-				menuAction("open",this,cartMenu,"right");
-				overlayAction("on");
+				closeMenu(navMenu,left);
+				menuAction(open,this,cartMenu,right);
+				overlayAction(on);
 			}
 		}
 	}
@@ -216,21 +222,21 @@ $(".currency-btn-mobile").click(function(){
 $(overlay).click(function(){
 	$(menuButton).removeClass("btn-active");
 	if ($(searchMenu).is(visible)) {
-		searchAction("close");
-		overlayAction("off");
+		searchAction(close);
+		overlayAction(off);
 	} else {
 		$(menu).stop(true,true).hide("slide", {direction: "right"});
-		overlayAction("off");
+		overlayAction(off);
 	}
 });
 
 // add/remove overlay on resize (if nec.)
 $(window).resize(function(){
 if (!($(menu).is(visible)) && ($(overlay).is(visible))) {
-	overlayAction("off");
+	overlayAction(off);
 }
 if (($(menu).is(visible)) && !($(overlay).is(visible))) {
-	overlayAction("on");
+	overlayAction(on);
 }
 });
 
@@ -255,16 +261,17 @@ $(".product-options .image-option .radio").not(this).each(function(){
 });
 
 // floating banner
+var bannerFloat = ".banner-float";
 $(document).ready(function(){
 function checkOffset() {
-	if ($('.banner-float').offset().top + $('.banner-float').height() >= $('footer').offset().top) {
-		$('.banner-float').css({
+	if ($(bannerFloat).offset().top + $(bannerFloat).height() >= $('footer').offset().top) {
+		$(bannerFloat).css({
 			'position': 'relative',
 			'bottom': '0px'
 		});
 	}
 	if ($(document).scrollTop() + window.innerHeight < $('footer').offset().top) {
-		$('.banner-float').css({
+		$(bannerFloat).css({
 			'position': 'fixed',
 			'bottom': '0px'
 		}); // restore when you scroll up
