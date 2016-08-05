@@ -322,7 +322,7 @@
     <?php } else { ?>
     <input type="checkbox" name="shipping_address" value="1" />
     <?php } ?>
-    <?php echo $entry_shipping; ?></label>
+    <span></span><?php echo $entry_shipping; ?></label>
 </div>
 <?php } ?>
 <div class="buttons">

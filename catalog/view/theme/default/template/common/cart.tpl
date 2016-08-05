@@ -1,6 +1,6 @@
 
 <li>
-<button type="button" class="nav-option-btn cart-btn" data-loading-text="<?php echo $text_loading; ?>">
+<button type="button" class="nav-option-btn cart-btn" data-loading-text="...">
 <i class="fa fa-shopping-cart"></i><!--<span id="cart-total"><?php echo $text_items; ?></span>-->
 </button>
 </li>
