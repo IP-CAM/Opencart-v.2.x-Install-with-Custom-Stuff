@@ -50,46 +50,42 @@ $(document).ready(function() {
 		$('#form-language').submit();
 	})
 
-	/* Search */
-	/* Main Nav Search */
-	$('.header .nav-main .search-menu input[name=\'search\']').parent().find('button').on('click', function() {
-		var url = $('base').attr('href') + 'index.php?route=product/search';
-
-		var value = $('.header .nav-main .search-menu input[name=\'search\']').val();
-
-		if (value) {
-			url += '&search=' + encodeURIComponent(value);
+	// Nav Search
+	// check for visible menu (main/mobile) on window load and resize
+	function checkMenuType(){
+		if ($(".nav-main").is(":visible")) {
+			performSearch(".nav-main");
+		} else {
+			performSearch(".nav-mobile");
 		}
+	}
 
-		location = url;
+	$(window).on("load resize", function(){
+		checkMenuType();
 	});
 
-	$('.header .nav-main .search-menu input[name=\'search\']').on('keydown', function(e) {
+	// perform search from main/mobile menu
+	function performSearch(menuType) {
+		$(menuType + ' .search-menu input[name=\'search\']').parent().find('button').on('click', function() {
+			var url = $('base').attr('href') + 'index.php?route=product/search';
+
+			var value = $(menuType + ' .search-menu input[name=\'search\']').val();
+
+			if (value) {
+				url += '&search=' + encodeURIComponent(value);
+			}
+
+			location = url;
+		});
+
+		$(menuType + ' .search-menu input[name=\'search\']').on('keydown', function(e) {
 		if (e.keyCode == 13) {
-			$('.header .nav-main .search-menu input[name=\'search\']').parent().find('button').trigger('click');
+			$(menuType + ' .search-menu input[name=\'search\']').parent().find('button').trigger('click');
 		}
 	});
+	}
 
-	/* Add Mobile Nav Search */
-	$('.header .nav-mobile .search-menu input[name=\'search\']').parent().find('button').on('click', function() {
-		var url = $('base').attr('href') + 'index.php?route=product/search';
-
-		var value = $('.header .nav-mobile .search-menu input[name=\'search\']').val();
-
-		if (value) {
-			url += '&search=' + encodeURIComponent(value);
-		}
-
-		location = url;
-	});
-
-	$('.header .nav-mobile .search-menu input[name=\'search\']').on('keydown', function(e) {
-		if (e.keyCode == 13) {
-			$('.header .nav-mobile .search-menu input[name=\'search\']').parent().find('button').trigger('click');
-		}
-	});
-
-	/* Add Home Page Search */
+	// Home Page Search
 	$('#home-search input[name=\'search\']').parent().find('button').on('click', function() {
 		var url = $('base').attr('href') + 'index.php?route=product/search';
 
