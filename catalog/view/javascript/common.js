@@ -191,7 +191,7 @@ var cart = {
 						$('#cart button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
 					}, 100);*/
 
-					// @mrlit // open cart after adding product
+					// open cart after adding product
 					$('.cart-btn').addClass('btn-active');
 					$('.cart-menu').show("slide", {direction: "right"});
 					overlayAction(on);
@@ -213,10 +213,10 @@ var cart = {
 			data: 'key=' + key + '&quantity=' + (typeof(quantity) != 'undefined' ? quantity : 1),
 			dataType: 'json',
 			beforeSend: function() {
-				$('#cart button').button('loading');
+				$('header .cart-btn').button('loading');
 			},
 			complete: function() {
-				$('#cart button').button('reset');
+				$('header .cart-btn').button('reset');
 			},
 			success: function(json) {
 				// Need to set timeout otherwise it wont update the total
@@ -259,7 +259,7 @@ var cart = {
 					$('#cart > .cart-menu-container').load('index.php?route=common/cart/info .cart-menu-container > div');
 				}
 
-				// @mrlit // close cart after removing product
+				// close cart after removing product
 				$('.cart-btn').removeClass('btn-active');
 				$('.cart-menu').hide("slide", {direction: "right"});
 				overlayAction(off);

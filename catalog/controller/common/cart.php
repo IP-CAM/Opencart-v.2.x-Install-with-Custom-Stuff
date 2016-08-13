@@ -63,7 +63,7 @@ class ControllerCommonCart extends Controller {
 
 		foreach ($this->cart->getProducts() as $product) {
 			if ($product['image']) {
-				// @mrlit ---> CHANGED TO ORIGINAL IMAGE SIZE
+				/* @mrlit - USE ORIGINAL IMAGE SIZE */
 				$image = $this->model_tool_image->onesize($product['image']);
 			} else {
 				$image = '';

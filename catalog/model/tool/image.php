@@ -40,14 +40,13 @@ class ModelToolImage extends Model {
 			return $this->config->get('config_url') . 'image/' . $new_image;
 		}
 	}
-	// @mrlit ---> NEW FOR USING ORIGINAL IMAGE SIZE
+
+	/* @mrlit - USE ORIGINAL IMAGE SIZE */
 	public function onesize($filename) {
 		if (!is_file(DIR_IMAGE . $filename)) {
 			return;
 		}
-
 		$image = $filename;
-		
 		if ($this->request->server['HTTPS']) {
 			return $this->config->get('config_ssl') . 'image/' . $image;
 		} else {

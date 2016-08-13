@@ -261,20 +261,22 @@ $(".product-options .image-option .radio").click(function(){
 });
 
 // floating banner
-var bannerFloat = ".banner-float";
+var bannerFloat = ".banner-float",
+	posRel = "relative",
+	posFixed = "fixed";
+function bannerPosition(varPos){
+	$(bannerFloat).css({
+		"position": varPos,
+		"bottom": "0px"
+	});
+}
 $(document).ready(function(){
 function checkOffset() {
 	if ($(bannerFloat).offset().top + $(bannerFloat).height() >= $('footer').offset().top) {
-		$(bannerFloat).css({
-			'position': 'relative',
-			'bottom': '0px'
-		});
+		bannerPosition(posRel);
 	}
 	if ($(document).scrollTop() + window.innerHeight < $('footer').offset().top) {
-		$(bannerFloat).css({
-			'position': 'fixed',
-			'bottom': '0px'
-		}); // restore when you scroll up
+		bannerPosition(posFixed); // restore when you scroll up
 	}
 }
 $(document).scroll(function(){

@@ -288,7 +288,7 @@ class ControllerProductProduct extends Controller {
 			}
 
 			if ($product_info['image']) {
-				// @mrlit ---> CHANGED TO ORIGINAL IMAGE SIZE
+				/* @mrlit - USE ORIGINAL IMAGE SIZE */
 				$data['thumb'] = $this->model_tool_image->onesize($product_info['image']);
 			} else {
 				$data['thumb'] = '';
@@ -301,7 +301,7 @@ class ControllerProductProduct extends Controller {
 			foreach ($results as $result) {
 				$data['images'][] = array(
 					'popup' => $this->model_tool_image->resize($result['image'], $this->config->get($this->config->get('config_theme') . '_image_popup_width'), $this->config->get($this->config->get('config_theme') . '_image_popup_height')),
-					// @mrlit ---> CHANGED TO ORIGINAL IMAGE SIZE
+					/* @mrlit - USE ORIGINAL IMAGE SIZE */
 					'thumb' => $this->model_tool_image->onesize($result['image']),
 					'thumb_additional' => $this->model_tool_image->resize($result['image'], $this->config->get($this->config->get('config_theme') . '_image_additional_width'), $this->config->get($this->config->get('config_theme') . '_image_additional_height'))
 				);

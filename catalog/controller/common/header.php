@@ -147,8 +147,7 @@ class ControllerCommonHeader extends Controller {
 			$data['class'] = 'common-home';
 		}
 
-		
-		
+		/* ADD CURRENCY TO HEADER */
 		$this->load->language('common/currency');
 
 		$data['text_currency'] = $this->language->get('text_currency');
@@ -196,7 +195,8 @@ class ControllerCommonHeader extends Controller {
 
 		return $this->load->view('common/header', $data);
 	}
-	
+
+	/* ADD CURRENCY TO HEADER */
 	public function currency() {
 		if (isset($this->request->post['code'])) {
 			$this->session->data['currency'] = $this->request->post['code'];

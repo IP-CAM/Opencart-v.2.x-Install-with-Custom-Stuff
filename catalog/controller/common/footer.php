@@ -71,8 +71,8 @@ class ControllerCommonFooter extends Controller {
 
 			$this->model_tool_online->addOnline($ip, $this->customer->getId(), $url, $referer);
 		}
-		
-		// Menu
+
+		/* ADD NAV/MENU TO FOOTER */
 		$this->load->model('catalog/category');
 
 		$this->load->model('catalog/product');
