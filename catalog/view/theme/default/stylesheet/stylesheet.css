@@ -1867,7 +1867,7 @@ display:none;
 margin-bottom:0;
 }
 
-.checkout-content input.form-control {
+.checkout-content input.form-control, .checkout-content #payment input {
 display: block;
 width: 100%;
 height: 40px;
