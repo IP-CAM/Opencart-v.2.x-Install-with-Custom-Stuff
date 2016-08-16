@@ -26,6 +26,9 @@
 <?php } ?>
 <p style="display:none;"><strong><?php echo $text_comments; ?></strong></p>
 <p style="display:none;"><textarea name="comment" rows="8" class="form-control"><?php echo $comment; ?></textarea></p>
+<?php if ($coupon) { ?>
+	<?php echo $coupon; ?>
+<?php } ?>
 <div class="buttons">
   <div class="pull-right">
     <input type="button" value="<?php echo $button_continue; ?>" id="button-shipping-method" data-loading-text="<?php echo $text_loading; ?>" class="btn btn-primary" />

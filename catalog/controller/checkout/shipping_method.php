@@ -69,6 +69,8 @@ class ControllerCheckoutShippingMethod extends Controller {
 			$data['comment'] = '';
 		}
 
+$data['coupon'] = $this->load->controller('checkout/coupon_code');
+
 		$this->response->setOutput($this->load->view('checkout/shipping_method', $data));
 	}
 
