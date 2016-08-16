@@ -6,7 +6,6 @@
       <td><input type="text" name="cc_name" value="" /></td>
     </tr>
     <tr>
-      <tr>
       <td><?php echo $entry_cc_number; ?></td>
       <td><input type="text" name="cc_number" value="" /></td>
     </tr>
