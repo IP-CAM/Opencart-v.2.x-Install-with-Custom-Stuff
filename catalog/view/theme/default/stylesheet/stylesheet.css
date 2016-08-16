@@ -1887,6 +1887,41 @@ box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
 transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }
 
+.coupon-group {
+margin-bottom:30px;
+margin-left:auto;
+margin-right:auto;
+}
+
+.coupon-title {
+margin-top:30px;
+text-align:center;
+}
+
+#input-coupon {
+display:inline-block;
+max-width:200px;
+}
+
+.coupon-btn {
+display:inline-block;
+}
+
+.btn-coupon {
+width:auto;
+height: 40px;
+padding:0px 15px;
+font-family:'Gotham-Book';
+font-size:14px;
+line-height:1.42857143;
+color:#fff;
+background-color:#231F20;
+background-image:none;
+border:none;
+border-radius:0;
+text-transform:uppercase;
+}
+
 .checkout-content select.form-control {
 display: block;
 width: 100%;
@@ -2016,6 +2051,18 @@ width: 15px;
 }
 
 /* checkout page payment form */
+#collapse-checkout-confirm h2 {
+text-align:center;
+}
+
+#collapse-checkout-confirm .attention {
+text-align:center;
+}
+
+.checkout-content #payment table {
+margin: 0 auto;
+}
+
 .checkout-content #payment table tr > td {
 padding-bottom:15px;
 padding-right:15px;
@@ -2039,6 +2086,10 @@ box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
 -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
 -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+#collapse-checkout-confirm .buttons {
+text-align:center;
 }
 
 /* CHECKOUT SUCCESS PAGE */

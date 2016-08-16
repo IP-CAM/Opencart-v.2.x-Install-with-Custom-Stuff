@@ -1,8 +1,9 @@
-      <label class="col-sm-2 control-label" for="input-coupon"><?php echo $entry_coupon; ?></label>
-      <div class="input-group">
+      <p class="coupon-title">Use a coupon code:</p>
+	  <label class="col-sm-2 control-label" for="input-coupon"><?php echo $entry_coupon; ?></label>
+      <div class="input-group coupon-group">
         <input type="text" name="coupon" value="<?php echo $coupon; ?>" placeholder="Coupon Code" id="input-coupon" class="form-control" />
-        <span class="input-group-btn">
-        <input type="button" value="<?php echo $button_coupon; ?>" id="button-coupon" data-loading-text="<?php echo $text_loading; ?>"  class="btn" style="padding: 9px; border: 2px solid;" />
+        <span class="input-group-btn coupon-btn">
+        <input type="button" value="<?php echo $button_coupon; ?>" id="button-coupon" data-loading-text="<?php echo $text_loading; ?>"  class="btn-coupon" />
         </span></div>
       <script type="text/javascript"><!--
 $('#button-coupon').on('click', function() {
