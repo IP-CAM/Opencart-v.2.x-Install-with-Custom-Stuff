@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modification>
+	<id>CUSTOM STUFF</id>
+	<version>1.0.0</version>
+	<vqmver required="true">2.6.0</vqmver>
+	<author>@mrlit</author>
+
+	<!-- catalog/controller/ -->
+	<file name="catalog/controller/checkout/guest.php">
+		<operation>
+			<search position="replace"><![CDATA[$json['error']['telephone'] = $this->language->get('error_telephone');]]></search>
+			<add><![CDATA[]]></add>
+		</operation>
+		<operation>
+			<search position="replace"><![CDATA[$this->session->data['guest']['telephone'] = $this->request->post['telephone'];]]></search>
+			<add><![CDATA[$this->session->data['guest']['telephone'] = '';]]></add>
+		</operation>
+		<operation>
+			<search position="replace"><![CDATA[$this->session->data['guest']['fax'] = $this->request->post['fax'];]]></search>
+			<add><![CDATA[$this->session->data['guest']['fax'] = '';]]></add>
+		</operation>
+		<operation>
+			<search position="replace"><![CDATA[$this->session->data['payment_address']['address_2'] = $this->request->post['address_2'];]]></search>
+			<add><![CDATA[$this->session->data['payment_address']['address_2'] = '';]]></add>
+		</operation>
+	</file>
+	<file name="catalog/controller/checkout/guest_shipping.php">
+		<operation>
+			<search position="replace"><![CDATA[$this->session->data['shipping_address']['company'] = $this->request->post['company'];]]></search>
+			<add><![CDATA[$this->session->data['shipping_address']['company'] = '';]]></add>
+		</operation>
+		<operation>
+			<search position="replace"><![CDATA[$this->session->data['shipping_address']['address_2'] = $this->request->post['address_2'];]]></search>
+			<add><![CDATA[$this->session->data['shipping_address']['address_2'] = '';]]></add>
+		</operation>
+	</file>
+	<file name="catalog/controller/common/cart.php">
+		<operation>
+			<search position="before"><![CDATA[$data['text_empty'] = $this->language->get('text_empty');]]></search>
+			<add><![CDATA[$data['text_cart_title'] = $this->language->get('text_cart_title');]]></add>
+		</operation>
+	</file>
+	<file name="catalog/controller/common/footer.php">
+		<operation>
+			<search position="after"><![CDATA[$data['powered'] = sprintf($this->language->get('text_powered'), $this->config->get('config_name'), date('Y', time()));]]></search>
+			<add><![CDATA[$data['text_copyright'] = sprintf($this->language->get('text_copyright'), $this->url->link('common/home'), $this->config->get('config_name'), date('Y', time()));]]></add>
+		</operation>
+		<operation>
+			<search position="after"><![CDATA[$data['text_newsletter'] = $this->language->get('text_newsletter');]]></search>
+			<add><![CDATA[$data['text_categories'] = $this->language->get('text_categories');]]></add>
+		</operation>
+		<operation>
+			<search position="after"><![CDATA[$data['text_newsletter'] = $this->language->get('text_newsletter');]]></search>
+			<add><![CDATA[$data['text_about'] = $this->language->get('text_about');]]></add>
+		</operation>
+	</file>
+	<file name="catalog/controller/common/home.php">
+		<operation>
+			<search position="after"><![CDATA[$data['header'] = $this->load->controller('common/header');]]></search>
+			<add><![CDATA[$data['search_home'] = $this->load->controller('common/search_home');]]></add>
+		</operation>
+	</file>
+	<file name="catalog/controller/common/search.php">
+		<operation>
+			<search position="after"><![CDATA[$data['text_search'] = $this->language->get('text_search');]]></search>
+			<add><![CDATA[$data['title_search'] = $this->language->get('title_search');]]></add>
+		</operation>
+	</file>
+
+	<!-- catalog/language/ -->
+	<file name="catalog/language/en-gb/checkout/checkout.php">
+		<operation>
+			<search position="replace"><![CDATA[Step %s: Checkout Options]]></search>
+			<add><![CDATA[Checkout Options]]></add>
+		</operation>
+		<operation>
+			<search position="replace"><![CDATA[Step %s: Account &amp; Billing Details]]></search>
+			<add><![CDATA[Billing]]></add>
+		</operation>
+		<operation>
+			<search position="replace"><![CDATA[Step %s: Billing Details]]></search>
+			<add><![CDATA[Billing]]></add>
+		</operation>
+		<operation>
+			<search position="replace"><![CDATA[Step %s: Delivery Details]]></search>
+			<add><![CDATA[Shipping Address]]></add>
+		</operation>
+		<operation>
+			<search position="replace"><![CDATA[Step %s: Delivery Method]]></search>
+			<add><![CDATA[Shipping Method]]></add>
+		</operation>
+		<operation>
+			<search position="replace"><![CDATA[Step %s: Payment Method]]></search>
+			<add><![CDATA[Payment Method]]></add>
+		</operation>
+		<operation>
+			<search position="replace"><![CDATA[Step %s: Confirm Order]]></search>
+			<add><![CDATA[Confirm Order]]></add>
+		</operation>
+		<operation>
+			<search position="replace"><![CDATA[Address 1]]></search>
+			<add><![CDATA[Address]]></add>
+		</operation>
+	</file>
+	<file name="catalog/language/en-gb/checkout/success.php">
+		<operation>
+			<search position="replace"><![CDATA['Your order has been placed!']]></search>
+			<add><![CDATA['THANK YOU!']]></add>
+		</operation>
+	</file>
+	<file name="catalog/language/en-gb/common/cart.php">
+		<operation>
+			<search position="before"><![CDATA[$_['text_items']     = '%s item(s) - %s';]]></search>
+			<add><![CDATA[$_['text_cart_title'] = 'Shopping Cart';]]></add>
+		</operation>
+		<operation>
+			<search position="replace"><![CDATA[$_['text_checkout']  = 'Checkout';]]></search>
+			<add><![CDATA[$_['text_checkout']  = 'Continue to Checkout';]]></add>
+		</operation>
+	</file>
+	<file name="catalog/language/en-gb/common/footer.php">
+		<operation>
+			<search position="after"><![CDATA[$_['text_powered']      = 'Powered By <a href="http://www.opencart.com">OpenCart</a><br /> %s &copy; %s';]]></search>
+			<add><![CDATA[$_['text_copyright'] = '<a href="%s">%s</a> &copy; %s | <a href="http://solidmiami.com" target="_blank">Site by Solid</a>';]]></add>
+		</operation>
+		<operation>
+			<search position="after"><![CDATA[$_['text_powered']      = 'Powered By <a href="http://www.opencart.com">OpenCart</a><br /> %s &copy; %s';]]></search>
+			<add><![CDATA[$_['text_categories'] = 'Jerseys';]]></add>
+		</operation>
+		<operation>
+			<search position="after"><![CDATA[$_['text_powered']      = 'Powered By <a href="http://www.opencart.com">OpenCart</a><br /> %s &copy; %s';]]></search>
+			<add><![CDATA[$_['text_about'] = 'About';]]></add>
+		</operation>
+	</file>
+	<file name="catalog/language/en-gb/common/search.php">
+		<operation>
+			<search position="replace"><![CDATA[$_['text_search'] = 'Search';]]></search>
+			<add><![CDATA[$_['text_search'] = '...';]]></add>
+		</operation>
+		<operation>
+			<search position="after"><![CDATA[$_['text_search'] = '...';]]></search>
+			<add><![CDATA[$_['title_search'] = 'Search our entire inventory.';]]></add>
+		</operation>
+	</file>
+	<file name="catalog/language/en-gb/module/featured.php">
+		<operation>
+			<search position="replace"><![CDATA[$_['heading_title'] = 'Featured';]]></search>
+			<add><![CDATA[$_['heading_title'] = 'Featured Jerseys';]]></add>
+		</operation>
+	</file>
+	<file name="catalog/language/en-gb/product/product.php">
+		<operation>
+			<search position="replace"><![CDATA['Qty']]></search>
+			<add><![CDATA['Quantity']]></add>
+		</operation>
+	</file>
+
+	<!-- catalog/model/ -->
+	<file name="catalog/model/shipping/weight.php">
+		<operation>
+			<search position="replace"><![CDATA[$result['name'] . '  (' . $this->language->get('text_weight') . ' ' . $this->weight->format($weight, $this->config->get('config_weight_class_id')) . ')']]></search>
+			<add><![CDATA[$result['name']]]></add>
+		</operation>
+	</file>
+</modification>
