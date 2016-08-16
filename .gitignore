@@ -1,7 +1,16 @@
 admin/
 image/
 system/
-vqmod/
+vqmod/install/
+vqmod/logs/
+vqmod/vqcache/
+vqmod/.htaccess
+vqmod/checked.cache
+vqmod/mods.cache
+vqmod/pathReplaces.php
+vqmod/readme.txt
+vqmod/vqmod.php
+vqmod/xml/vqmod_opencart.xml
 .htaccess.txt
 config.php
 index.php
